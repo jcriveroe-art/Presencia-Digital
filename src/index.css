@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Sora:wght@400;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #131313;
+  --color-surface: #131313;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-accent: #CCFF00;
+  --color-secondary-container: #00eefc;
+
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Sora", sans-serif;
+
+  --animate-glow-pulse: glow-pulse 3s infinite ease-in-out;
+  --animate-float: float 6s infinite ease-in-out;
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: #e5e2e1;
+  font-family: var(--font-body);
+}
+
+.neon-text-glow {
+  text-shadow: 0 0 10px rgba(204, 255, 0, 0.4);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.grid-bg {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.accent-gradient {
+  background: linear-gradient(135deg, #CCFF00, #00f2ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.msg.bot {
+  background: rgba(204, 255, 0, 0.1);
+  border: 1px solid rgba(204, 255, 0, 0.2);
+}
+
+.msg.user {
+  background: #CCFF00;
+  color: #131313;
+  font-weight: 600;
+}
