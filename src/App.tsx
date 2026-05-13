@@ -71,7 +71,7 @@ export default function App() {
 
     // Tiempos
     if (q.includes('tiempo') || q.includes('cuándo') || q.includes('inicio') || q.includes('empezar')) {
-      return '¡Somos muy rápidos! Una vez que eliges tu plan, **empezamos a entregar o publicar en menos de 48 horas**. Tu contenido estará listo para aprobación casi de inmediato.';
+      return 'Arrancamos rápido. Después de entender tu negocio y elegir plan, podemos tener tu primera propuesta de contenido en **menos de 48 horas** para que la revises antes de publicar.';
     }
 
     // Redes abandonadas
@@ -81,7 +81,7 @@ export default function App() {
 
     // Precios genéricos
     if (q.includes('precio') || q.includes('cuánto') || q.includes('costo')) {
-      return 'Manejamos paquetes de **Contenido IA** desde **$800 MXN/mes**. También creamos tu **Influencer Digital** por un pago único de **$3,500 MXN**. ¿En qué área te gustaría enfocarte?';
+      return 'Manejamos paquetes de **Contenido IA** desde **$800 MXN/mes** y creación de **Influencer Digital** desde **$3,500 MXN pago único**. Lo ideal es decirme tu giro y te recomiendo el paquete correcto para no pagar de más.';
     }
 
     // Aprobación
@@ -103,6 +103,40 @@ export default function App() {
       setMessages((prev) => [...prev, { role: 'bot', text: formatText(getAIResponse(text)) }]);
     }, 1500);
   };
+
+  const targetNiches = [
+    { label: 'Barberías', value: 'imagen premium urbana' },
+    { label: 'Gyms', value: 'contenido aspiracional fitness' },
+    { label: 'Veterinarias', value: 'confianza y cercanía' },
+    { label: 'Restaurantes', value: 'antojo visual y reservas' },
+    { label: 'Hoteles', value: 'deseo, experiencia y estatus' },
+    { label: 'Marcas personales', value: 'autoridad y recordación' },
+  ];
+
+  const transformationCases = [
+    {
+      before: 'Redes sin dirección',
+      after: 'Contenido con estética reconocible',
+      detail: 'Tu negocio deja de verse improvisado y empieza a transmitir marca.',
+    },
+    {
+      before: 'Publicaciones genéricas',
+      after: 'Reels con intención comercial',
+      detail: 'Cada pieza tiene hook, mensaje y CTA para mover a la gente a preguntar.',
+    },
+    {
+      before: 'Perfil que no da confianza',
+      after: 'Presencia visual premium',
+      detail: 'La primera impresión se vuelve más profesional antes de que el cliente escriba.',
+    },
+  ];
+
+  const authorityPoints = [
+    'Dirección visual por giro, no plantillas genéricas',
+    'Contenido creado para percepción, confianza y ventas',
+    'Producción rápida con IA + criterio creativo humano',
+    'Entregas claras para aprobar, publicar y medir',
+  ];
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
@@ -172,33 +206,41 @@ export default function App() {
               className="text-left max-w-2xl"
             >
               <span className="inline-block py-1 px-3 rounded-full border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase mb-6 bg-accent/5 backdrop-blur-sm">
-                ✦ Powered by IA Generativa
+                ✦ Branding visual + Reels + IA
               </span>
               <h1 className="font-heading text-6xl md:text-8xl font-extrabold leading-tight mb-8 text-white tracking-tighter">
-                Contenido IA que <span className="accent-gradient">realmente</span> vende
+                Haz que tu negocio <span className="accent-gradient">se vea premium</span> online
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl leading-relaxed font-medium">
-                Te entregamos imágenes, videos y captions listos para publicar — sin fotógrafo, sin agencia, sin complicaciones.
+                Convertimos redes normales en una presencia visual moderna: reels, UGC, captions y piezas listas para publicar, sin procesos lentos ni producción complicada.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-block text-center px-10 py-4 bg-accent text-black rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] transition-all"
-                  href="#paquetes"
+                  href="https://wa.me/525647943262?text=Hola,%20quiero%20una%20propuesta%20para%20mejorar%20la%20presencia%20digital%20de%20mi%20negocio."
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  Ver paquetes
+                  Recibir propuesta
                 </motion.a>
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center justify-center px-10 py-4 glass-effect rounded-xl font-bold text-lg hover:bg-white/10 transition-all text-white border border-white/10"
-                  href="https://wa.me/525647943262?text=Hola,%20me%20interesa%20mejorar%20mis%20redes%20sociales%20con%20IA.%20¿Me%20pueden%20ayudar?"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="#paquetes"
                 >
-                  WhatsApp
+                  Ver paquetes
                 </motion.a>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                {targetNiches.slice(0, 5).map((niche) => (
+                  <span key={niche.label} className="rounded-full border border-white/10 bg-black/30 px-4 py-2 text-xs font-bold uppercase tracking-widest text-gray-300 backdrop-blur-sm">
+                    {niche.label}
+                  </span>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -206,6 +248,71 @@ export default function App() {
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-glow-pulse z-10"></div>
           <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary-container/10 rounded-full blur-[120px] animate-glow-pulse z-10" style={{ animationDelay: '1.5s' }}></div>
         </section>
+
+        {/* Commercial Clarity Section */}
+        <motion.section
+          {...fadeInUp}
+          className="py-20 bg-[#050505] border-y border-white/5"
+          data-purpose="commercial-clarity"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
+              <div>
+                <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Qué hacemos realmente</span>
+                <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tighter">
+                  No vendemos publicaciones. Construimos percepción premium.
+                </h2>
+                <p className="text-gray-300 text-lg leading-relaxed font-medium">
+                  Tu Instagram, TikTok y WhatsApp son la primera impresión de tu negocio. Si se ven improvisados, pierdes confianza antes de que te escriban. Presencia Digital ordena tu imagen, crea contenido moderno y deja claro por qué alguien debería elegirte.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {[
+                  { title: 'Claridad', text: 'Que entiendan qué haces y por qué elegirte.' },
+                  { title: 'Confianza', text: 'Que tu negocio se vea activo, actual y profesional.' },
+                  { title: 'Conversión', text: 'Que cada pieza empuje a mensaje, llamada o visita.' },
+                ].map((item) => (
+                  <div key={item.title} className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-xl hover:border-accent/30 transition-all">
+                    <div className="mb-5 h-10 w-10 rounded-xl bg-accent/20 border border-accent/30"></div>
+                    <h3 className="font-heading text-xl font-bold text-white mb-3">{item.title}</h3>
+                    <p className="text-sm text-gray-400 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Niches Section */}
+        <motion.section
+          {...fadeInUp}
+          className="py-20 bg-black"
+          data-purpose="target-niches"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Especialidad</span>
+                <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tighter">
+                  Para negocios que necesitan verse mejor para vender mejor
+                </h2>
+              </div>
+              <p className="text-gray-400 max-w-xl font-medium">
+                Adaptamos el estilo visual al giro del negocio para que no parezca contenido genérico de agencia.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {targetNiches.map((niche) => (
+                <div key={niche.label} className="group rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-7 hover:border-accent/40 transition-all">
+                  <h3 className="font-heading text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">{niche.label}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{niche.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
 
         {/* Influencer Digital Section */}
         <motion.section 
@@ -317,8 +424,8 @@ export default function App() {
         >
           <div className="max-w-7xl mx-auto px-6 text-center">
             <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">¿Te identificas?</span>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">Tu negocio merece más que redes abandonadas</h2>
-            <p className="text-gray-300 text-lg mb-12 max-w-2xl mx-auto font-medium">La mayoría de los negocios locales saben que necesitan estar en redes — pero no tienen tiempo, presupuesto ni equipo para hacerlo bien.</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">Tu negocio puede ser bueno, pero si se ve débil online pierde ventas</h2>
+            <p className="text-gray-300 text-lg mb-12 max-w-2xl mx-auto font-medium">El cliente decide en segundos si confía o no. Redes descuidadas, fotos pobres y contenido sin dirección hacen que tu negocio parezca menos profesional de lo que realmente es.</p>
             
             <motion.div 
               variants={staggerContainer}
@@ -362,8 +469,8 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Nuestras soluciones</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">Contenido IA. Resultados reales.</h2>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto font-medium">Usamos inteligencia artificial para crear contenido de calidad profesional a una fracción del costo.</p>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">Contenido moderno con intención comercial.</h2>
+              <p className="text-gray-300 text-lg max-w-2xl mx-auto font-medium">Usamos IA, dirección creativa y estructura comercial para que tu marca se vea actual, confiable y lista para vender.</p>
             </div>
             <motion.div 
               variants={staggerContainer}
@@ -395,6 +502,78 @@ export default function App() {
         </motion.section>
 
 
+        {/* Visual Transformation Section */}
+        <motion.section
+          {...fadeInUp}
+          className="py-24 bg-black border-y border-white/5"
+          data-purpose="visual-transformation"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-16">
+              <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Antes vs después</span>
+              <h2 className="font-heading text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tighter">
+                La transformación que sí se nota
+              </h2>
+              <p className="text-gray-400 max-w-2xl mx-auto font-medium">
+                El objetivo no es solo publicar más. Es que tu negocio se vea más confiable, moderno y deseable.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {transformationCases.map((item) => (
+                <motion.div
+                  key={item.before}
+                  variants={fadeInUp}
+                  whileHover={{ y: -6, borderColor: 'rgba(204, 255, 0, 0.35)' }}
+                  className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 transition-all"
+                >
+                  <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="rounded-2xl border border-red-400/10 bg-red-400/5 p-4">
+                      <p className="text-[10px] uppercase tracking-widest text-red-300/80 mb-2 font-bold">Antes</p>
+                      <p className="text-sm text-gray-300 font-semibold">{item.before}</p>
+                    </div>
+                    <div className="rounded-2xl border border-accent/20 bg-accent/10 p-4">
+                      <p className="text-[10px] uppercase tracking-widest text-accent mb-2 font-bold">Después</p>
+                      <p className="text-sm text-white font-semibold">{item.after}</p>
+                    </div>
+                  </div>
+                  <p className="text-gray-400 leading-relaxed text-sm">{item.detail}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Authority Section */}
+        <motion.section
+          {...fadeInUp}
+          className="py-24 bg-[#0a0a0a]"
+          data-purpose="authority"
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+              <div>
+                <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Por qué funciona</span>
+                <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tighter">
+                  IA con dirección creativa, no contenido al azar
+                </h2>
+                <p className="text-gray-300 text-lg leading-relaxed font-medium">
+                  La diferencia no está solo en generar imágenes. Está en saber qué decir, cómo mostrarlo, qué emoción activar y cómo llevar al cliente a escribirte.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                {authorityPoints.map((point, index) => (
+                  <div key={point} className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:border-cyan-400/30 transition-all">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 font-black">0{index + 1}</span>
+                    <p className="text-white font-semibold leading-relaxed">{point}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         {/* Pricing Section */}
         <motion.section 
           {...fadeInUp}
@@ -403,8 +582,8 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Tarifas</span>
-              <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-white">Planes a tu medida</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">Escalabilidad inmediata para tu presencia digital. Sin contratos forzosos.</p>
+              <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-white">Elige cómo quieres modernizar tu presencia</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">Paquetes claros para empezar rápido, validar contenido y convertir tus redes en una herramienta comercial.</p>
             </div>
 
             {/* CONTENIDO IA */}
@@ -615,7 +794,7 @@ export default function App() {
         >
           <div className="max-w-3xl mx-auto px-6 text-center">
             <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Metodología</span>
-            <h2 className="font-heading text-4xl font-bold mb-8 text-white">Cómo arrancamos</h2>
+            <h2 className="font-heading text-4xl font-bold mb-8 text-white">Proceso claro, sin complicarte</h2>
             <motion.div 
                variants={staggerContainer}
                initial="initial"
@@ -624,9 +803,9 @@ export default function App() {
               className="space-y-0 text-left"
             >
               {[
-                { step: "01", title: "Conversación inicial", desc: "Una llamada o chat de 20 minutos para entender tu negocio, tu giro y a quién le quieres vender." },
+                { step: "01", title: "Conversación inicial", desc: "Una llamada o chat corto para entender tu negocio, tu cliente ideal y qué quieres vender más." },
                 { step: "02", title: "Análisis de tu cuenta", desc: "Revisamos el estado actual de tus redes — o creamos el perfil desde cero si no tienes." },
-                { step: "03", title: "Propuesta de contenido", desc: "Te mostramos el calendario del primer mes con ejemplos del contenido que vamos a crear." },
+                { step: "03", title: "Propuesta de contenido", desc: "Te mostramos una propuesta visual clara: tipo de contenido, enfoque, calendario y mensajes clave." },
                 { step: "04", title: "Ejecución con IA", desc: "Generamos las imágenes, videos y copys. Tú apruebas o pedimos ajustes antes de publicar." },
                 { step: "05", title: "Publicación y seguimiento", desc: "Publicamos en los mejores horarios y te mandamos el reporte de resultados cada mes." }
               ].map((item, i) => (
@@ -733,8 +912,8 @@ export default function App() {
             className="absolute top-0 right-0 w-64 h-64 bg-accent/10 blur-[100px] rounded-full"
           />
           <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-            <h2 className="font-heading text-5xl md:text-7xl font-extrabold mb-6 text-white">¿Listo para <span className="italic text-accent">evolucionar?</span></h2>
-            <p className="text-gray-300 text-xl mb-8 max-w-2xl mx-auto font-medium">Tu negocio activo en redes en menos de 48 horas. Sin contratos largos. Solo resultados.</p>
+            <h2 className="font-heading text-5xl md:text-7xl font-extrabold mb-6 text-white">¿Listo para que tu negocio <span className="italic text-accent">se vea premium?</span></h2>
+            <p className="text-gray-300 text-xl mb-8 max-w-2xl mx-auto font-medium">Te damos una propuesta clara para mejorar tu imagen, ordenar tu contenido y empezar a publicar con intención comercial.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.a 
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(204, 255, 0, 0.4)" }}
@@ -744,7 +923,7 @@ export default function App() {
                 target="_blank" 
                 rel="noreferrer"
               >
-                Escribir por WhatsApp
+                Pedir propuesta por WhatsApp
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
