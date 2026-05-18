@@ -64,3 +64,94 @@ body {
   color: #131313;
   font-weight: 600;
 }
+
+/* Mobile hero fix */
+@media (max-width: 768px) {
+  [data-purpose="hero"] {
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding-top: 6.5rem !important;
+    padding-bottom: 2.25rem !important;
+    overflow: hidden !important;
+    background-color: #050505 !important;
+  }
+
+  [data-purpose="hero"] > div:first-child {
+    position: relative !important;
+    inset: auto !important;
+    order: 2 !important;
+    z-index: 15 !important;
+    width: calc(100% - 2rem) !important;
+    height: clamp(320px, 54vh, 440px) !important;
+    margin: 1.75rem auto 0 !important;
+    border-radius: 1.5rem !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(204, 255, 0, 0.18) !important;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55),
+      0 0 34px rgba(204, 255, 0, 0.10) !important;
+  }
+
+  [data-purpose="hero"] > div:first-child img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center right !important;
+  }
+
+  [data-purpose="hero"] > div:nth-child(2),
+  [data-purpose="hero"] > div:nth-child(3),
+  [data-purpose="hero"] > div:nth-child(4),
+  [data-purpose="hero"] > div:nth-child(5) {
+    display: none !important;
+  }
+
+  [data-purpose="hero"] > .max-w-7xl {
+    order: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    margin: 0 !important;
+  }
+
+  [data-purpose="hero"] [class*="max-w-2xl"] {
+    max-width: 100% !important;
+  }
+
+  [data-purpose="hero"] h1 {
+    font-size: clamp(3rem, 13.5vw, 4.5rem) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.08em !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  [data-purpose="hero"] p {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  [data-purpose="hero"] a {
+    width: 100% !important;
+    min-height: 56px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  [data-purpose="hero"] span.inline-block {
+    margin-bottom: 1rem !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  [data-purpose="hero"] [class*="mt-8"][class*="flex-wrap"] {
+    display: none !important;
+  }
+}
