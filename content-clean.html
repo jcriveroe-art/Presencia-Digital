@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presencia Digital IA – Enciende tu negocio</title>
+  <!-- Font Awesome for icons -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /*
+     * Core colour palette.
+     * We keep the colours minimal: dark backgrounds, white text and a lime accent.
+     * Adjust the --lime value if you wish to refine the accent tone.
+     */
+    :root {
+      --black: #050505;
+      --dark: #0f0f0f;
+      --white: #ffffff;
+      --lime: #b6ff40;
+      --gray: #f5f5f5;
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* Global defaults */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: inherit;
+      line-height: 1.5;
+      color: var(--black);
+      background-color: var(--white);
+    }
+    section {
+      padding: 60px 20px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background-color: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .hero h1 .highlight {
+      color: var(--lime);
+    }
+    .hero p.subtitle {
+      font-size: 1.25rem;
+      margin-top: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero p.support {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #cccccc;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .primary {
+      background-color: var(--lime);
+      color: var(--black);
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .primary:hover {
+      background-color: #a8ff2f;
+    }
+    .secondary {
+      background-color: transparent;
+      color: var(--lime);
+      border: 2px solid var(--lime);
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .secondary:hover {
+      background-color: var(--lime);
+      color: var(--black);
+    }
+    .small-tagline {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888888;
+    }
+
+    /* PROBLEM SECTION */
+    .problem {
+      background-color: var(--gray);
+      color: var(--black);
+    }
+    .problem h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .problem p {
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    .problem ul {
+      max-width: 700px;
+      margin: 0 auto;
+      list-style: none;
+      padding: 0;
+    }
+    .problem ul li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .problem ul li::before {
+      content: "\f111";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      margin-right: 12px;
+      color: var(--lime);
+      font-size: 0.6rem;
+      margin-top: 6px;
+    }
+
+    /* SOLUTION SECTION */
+    .solution {
+      background-color: var(--dark);
+      color: var(--white);
+    }
+    .solution h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .solution h2 .highlight {
+      color: var(--lime);
+    }
+    .solution p {
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #dddddd;
+      text-align: center;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #333333;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .card i {
+      font-size: 2rem;
+      color: var(--lime);
+      margin-bottom: 12px;
+    }
+    .card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #aaaaaa;
+      line-height: 1.4;
+    }
+
+    /* STEPS SECTION */
+    .steps {
+      background-color: var(--white);
+      color: var(--black);
+    }
+    .steps h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .step-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .step-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .step-number {
+      background-color: var(--lime);
+      color: var(--black);
+      font-weight: 700;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-content h4 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .step-content p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+      color: #555555;
+    }
+    @media (min-width: 768px) {
+      .step-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .step-item {
+        width: calc(50% - 10px);
+      }
+    }
+
+    /* FINAL CTA */
+    .final-cta {
+      background-color: var(--black);
+      color: var(--white);
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .final-cta button {
+      background-color: var(--lime);
+      color: var(--black);
+      padding: 14px 32px;
+      border: none;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .final-cta button:hover {
+      background-color: #a8ff2f;
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <h1><span class="highlight">ENCIENDE</span> TU NEGOCIO</h1>
+    <p class="subtitle">
+      Haz que tu negocio se vea mejor, atienda mejor y venda con menos caos.
+    </p>
+    <p class="support">
+      Presencia visual, contenido, WhatsApp Business y sistema simple para
+      negocios locales.
+    </p>
+    <div class="buttons">
+      <button class="primary">Quiero poner mi negocio en ON</button>
+      <button class="secondary">Ver cómo funciona</button>
+    </div>
+    <p class="small-tagline">No hacemos posts. Encendemos negocios.</p>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="problem">
+    <h2>Tu negocio puede ser bueno, pero verse apagado.</h2>
+    <p>
+      Si tus redes se ven improvisadas, tu WhatsApp está desordenado o tus
+      clientes se pierden entre mensajes, tu negocio pierde confianza antes de
+      vender.
+    </p>
+    <ul>
+      <li>Perfil poco profesional</li>
+      <li>Fotos y contenido sin intención</li>
+      <li>WhatsApp sin orden</li>
+      <li>Clientes sin seguimiento</li>
+      <li>Citas o pedidos mal organizados</li>
+    </ul>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution">
+    <h2>
+      De negocio apagado a negocio <span class="highlight">ON</span>.
+    </h2>
+    <p>
+      Ordenamos cómo se ve tu negocio, cómo te escriben y cómo atiendes a tus
+      clientes.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <i class="fas fa-eye"></i>
+        <h3>Presencia visual ON</h3>
+        <p>Páginas y perfiles que transmiten claridad y confianza.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-film"></i>
+        <h3>Contenido y reels</h3>
+        <p>Contenido pensado para inspirar y conectar.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-comments"></i>
+        <h3>WhatsApp Business</h3>
+        <p>Organiza tus mensajes y atiende mejor.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Google Maps</h3>
+        <p>Aparece cuando te buscan y guía a tus clientes.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Clientes, citas y seguimiento</h3>
+        <p>Control de pedidos y citas sin caos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS / HOW IT WORKS -->
+  <section class="steps">
+    <h2>Un sistema simple para encender tu negocio.</h2>
+    <div class="step-list">
+      <div class="step-item">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Revisamos tu presencia actual</h4>
+          <p>
+            Analizamos cómo te ve el mundo y qué se puede mejorar.
+          </p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Mejoramos cómo se ve tu negocio</h4>
+          <p>
+            Diseñamos o actualizamos tu presencia visual.
+          </p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>Ordenamos tu WhatsApp y clientes</h4>
+          <p>
+            Configuramos flujos y etiquetas para tener control.
+          </p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Creamos contenido visual</h4>
+          <p>
+            Contenido y reels que hablan por ti.
+          </p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-number">5</div>
+        <div class="step-content">
+          <h4>Medimos y ajustamos</h4>
+          <p>
+            Seguimos los resultados y mejoramos continuamente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CALL TO ACTION -->
+  <section class="final-cta">
+    <h2>Tu negocio ya tiene valor. Ahora hay que encenderlo.</h2>
+    <button>Cotizar por WhatsApp</button>
+  </section>
+</body>
+</html>

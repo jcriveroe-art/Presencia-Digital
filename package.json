@@ -1,34 +1,22 @@
 {
-  "name": "react-example",
+  "name": "presencia-digital-ia-crm",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "description": "Presencia Digital IA CRM empaquetado con Capacitor para Android.",
   "scripts": {
-    "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
-    "preview": "vite preview",
-    "clean": "rm -rf dist",
-    "lint": "tsc --noEmit"
+    "vercel:build": "node scripts/prepare-vercel.js",
+    "prepare:web": "node scripts/prepare-capacitor-web.js",
+    "cap:add:android": "npm run prepare:web && npx cap add android",
+    "cap:sync": "npm run prepare:web && npx cap sync android",
+    "cap:open": "npx cap open android",
+    "android:debug": "npm run cap:sync && cd android && gradlew assembleDebug",
+    "android:release": "npm run cap:sync && cd android && gradlew assembleRelease"
   },
   "dependencies": {
-    "@google/genai": "^1.29.0",
-    "@tailwindcss/vite": "^4.1.14",
-    "@vitejs/plugin-react": "^5.0.4",
-    "lucide-react": "^0.546.0",
-    "react": "^19.0.1",
-    "react-dom": "^19.0.1",
-    "vite": "^6.2.3",
-    "express": "^4.21.2",
-    "dotenv": "^17.2.3",
-    "motion": "^12.23.24"
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/core": "^7.4.4"
   },
   "devDependencies": {
-    "@types/node": "^22.14.0",
-    "autoprefixer": "^10.4.21",
-    "tailwindcss": "^4.1.14",
-    "tsx": "^4.21.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.3",
-    "@types/express": "^4.17.21"
+    "@capacitor/cli": "^7.4.4"
   }
 }

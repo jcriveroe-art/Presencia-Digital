@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect, ReactNode } from 'react';
+﻿import React, { useState, useRef, useEffect, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Sparkles, CircleDollarSign, LineChart } from 'lucide-react';
+import { Sparkles, CircleDollarSign, LineChart, Clock, Camera, MessageSquareWarning, Boxes, Eye, Film, MessagesSquare, MapPin, CalendarCheck } from 'lucide-react';
 
 type Message = {
   role: 'bot' | 'user';
@@ -26,7 +26,7 @@ export default function App() {
       role: 'bot',
       text: (
         <>
-          ¡Hola! Soy el asistente de <strong>Presencia Digital</strong>. Cuéntame sobre tu negocio o pregúntame lo que quieras saber del servicio. 👋
+          Â¡Hola! Soy el asistente de <strong>Presencia Digital</strong>. CuÃ©ntame sobre tu negocio o pregÃºntame lo que quieras saber del servicio. ðŸ‘‹
         </>
       ),
     },
@@ -55,41 +55,41 @@ export default function App() {
     const q = query.toLowerCase();
     
     // IA & Fotos
-    if (q.includes('ia') || q.includes('funciona') || q.includes('fotos') || q.includes('fotografía')) {
-      return '¡Es la mejor parte! **No necesitas enviarnos fotos profesionales.** Nuestra IA genera imágenes y videos de alta calidad basados en tu giro de negocio. Si tienes fotos de tus productos reales, podemos usarlas, pero si no, nosotros creamos todo el contenido visual para que luzcas como una marca de primer nivel.';
+    if (q.includes('ia') || q.includes('funciona') || q.includes('fotos') || q.includes('fotografÃ­a')) {
+      return 'Â¡Es la mejor parte! **No necesitas enviarnos fotos profesionales.** Nuestra IA genera imÃ¡genes y videos de alta calidad basados en tu giro de negocio. Si tienes fotos de tus productos reales, podemos usarlas, pero si no, nosotros creamos todo el contenido visual para que luzcas como una marca de primer nivel.';
     }
 
     // Contratos & Plazos
     if (q.includes('contrato') || q.includes('plazo') || q.includes('permanencia') || q.includes('forzoso')) {
-      return 'En Presencia Digital **no tenemos plazos forzosos**. Queremos que te quedes con nosotros por los resultados, no por un papel. Puedes cancelar o cambiar de plan en cualquier momento avisándonos con 5 días de anticipación al siguiente mes.';
+      return 'En Presencia Digital **no tenemos plazos forzosos**. Queremos que te quedes con nosotros por los resultados, no por un papel. Puedes cancelar o cambiar de plan en cualquier momento avisÃ¡ndonos con 5 dÃ­as de anticipaciÃ³n al siguiente mes.';
     }
 
     // Paquetes & Conveniencia
     if (q.includes('paquete') || q.includes('conviene') || q.includes('recomiendas')) {
-      return 'Depende de tu objetivo:\n- Para **Contenido IA**, el **Pro ($1,500)** es nuestra mejor recomendación (es el más vendido).\n- Si buscas algo **básico**, el **Starter ($800)** funciona de maravilla.\n- Si quieres la **cara de tu marca**, el **Influencer Digital ($3,500 pago único)** cambiará tu juego.';
+      return 'Depende de tu objetivo:\n- Para **Contenido IA**, el **Pro ($1,500)** es nuestra mejor recomendaciÃ³n (es el mÃ¡s vendido).\n- Si buscas algo **bÃ¡sico**, el **Starter ($800)** funciona de maravilla.\n- Si quieres la **cara de tu marca**, el **Influencer Digital ($3,500 pago Ãºnico)** cambiarÃ¡ tu juego.';
     }
 
     // Tiempos
-    if (q.includes('tiempo') || q.includes('cuándo') || q.includes('inicio') || q.includes('empezar')) {
-      return 'Arrancamos rápido. Después de entender tu negocio y elegir plan, podemos tener tu primera propuesta de contenido en **menos de 48 horas** para que la revises antes de publicar.';
+    if (q.includes('tiempo') || q.includes('cuÃ¡ndo') || q.includes('inicio') || q.includes('empezar')) {
+      return 'Â¡Somos muy rÃ¡pidos! Una vez que eliges tu plan, **empezamos a entregar o publicar en menos de 48 horas**. Tu contenido estarÃ¡ listo para aprobaciÃ³n casi de inmediato.';
     }
 
     // Redes abandonadas
     if (q.includes('abandonadas') || q.includes('viejas') || q.includes('cero')) {
-      return 'No te preocupes, es nuestra especialidad. Si tienes cuentas abandonadas, les damos una "limpieza facial" profesional. Si no tienes nada, las creamos desde cero para que desde el primer día transmitas confianza a tus clientes.';
+      return 'No te preocupes, es nuestra especialidad. Si tienes cuentas abandonadas, les damos una "limpieza facial" profesional. Si no tienes nada, las creamos desde cero para que desde el primer dÃ­a transmitas confianza a tus clientes.';
     }
 
-    // Precios genéricos
-    if (q.includes('precio') || q.includes('cuánto') || q.includes('costo')) {
-      return 'Manejamos paquetes de **Contenido IA** desde **$800 MXN/mes** y creación de **Influencer Digital** desde **$3,500 MXN pago único**. Lo ideal es decirme tu giro y te recomiendo el paquete correcto para no pagar de más.';
+    // Precios genÃ©ricos
+    if (q.includes('precio') || q.includes('cuÃ¡nto') || q.includes('costo')) {
+      return 'Manejamos paquetes de **Contenido IA** desde **$800 MXN/mes**. TambiÃ©n creamos tu **Influencer Digital** por un pago Ãºnico de **$3,500 MXN**. Â¿En quÃ© Ã¡rea te gustarÃ­a enfocarte?';
     }
 
-    // Aprobación
+    // AprobaciÃ³n
     if (q.includes('ajuste') || q.includes('cambio') || q.includes('revisar') || q.includes('aprobar')) {
-      return 'Tú tienes el control total. Antes de publicar, te enviamos el calendario. Si algo no te gusta, pedimos a la IA que lo ajuste o lo cambiamos. **Nada se publica sin tu visto bueno.**';
+      return 'TÃº tienes el control total. Antes de publicar, te enviamos el calendario. Si algo no te gusta, pedimos a la IA que lo ajuste o lo cambiamos. **Nada se publica sin tu visto bueno.**';
     }
 
-    return '¡Excelente pregunta! Lo mejor es platicarlo 5 minutos para darte una solución a medida. ¿Te gustaría agendar una llamada rápida o prefieres que te mande más ejemplos por WhatsApp?';
+    return 'Â¡Excelente pregunta! Lo mejor es platicarlo 5 minutos para darte una soluciÃ³n a medida. Â¿Te gustarÃ­a agendar una llamada rÃ¡pida o prefieres que te mande mÃ¡s ejemplos por WhatsApp?';
   };
 
   const handleSend = (text: string) => {
@@ -103,40 +103,6 @@ export default function App() {
       setMessages((prev) => [...prev, { role: 'bot', text: formatText(getAIResponse(text)) }]);
     }, 1500);
   };
-
-  const targetNiches = [
-    { label: 'Barberías', value: 'imagen premium urbana' },
-    { label: 'Gyms', value: 'contenido aspiracional fitness' },
-    { label: 'Veterinarias', value: 'confianza y cercanía' },
-    { label: 'Restaurantes', value: 'antojo visual y reservas' },
-    { label: 'Hoteles', value: 'deseo, experiencia y estatus' },
-    { label: 'Marcas personales', value: 'autoridad y recordación' },
-  ];
-
-  const transformationCases = [
-    {
-      before: 'Redes sin dirección',
-      after: 'Contenido con estética reconocible',
-      detail: 'Tu negocio deja de verse improvisado y empieza a transmitir marca.',
-    },
-    {
-      before: 'Publicaciones genéricas',
-      after: 'Reels con intención comercial',
-      detail: 'Cada pieza tiene hook, mensaje y CTA para mover a la gente a preguntar.',
-    },
-    {
-      before: 'Perfil que no da confianza',
-      after: 'Presencia visual premium',
-      detail: 'La primera impresión se vuelve más profesional antes de que el cliente escriba.',
-    },
-  ];
-
-  const authorityPoints = [
-    'Dirección visual por giro, no plantillas genéricas',
-    'Contenido creado para percepción, confianza y ventas',
-    'Producción rápida con IA + criterio creativo humano',
-    'Entregas claras para aprobar, publicar y medir',
-  ];
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
@@ -154,20 +120,20 @@ export default function App() {
             <div className="w-8 h-8 bg-accent rounded-lg rotate-12 flex items-center justify-center">
               <span className="font-heading font-extrabold text-black text-xl italic">P</span>
             </div>
-            <span className="font-heading font-bold text-xl tracking-tighter">Presencia Digital</span>
+            <span className="font-heading font-bold text-xl tracking-tighter">Presencia Digital IA</span>
           </div>
           {/* Links */}
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-400" data-purpose="nav-links">
             <a className="hover:text-accent transition-colors" href="#servicios">Servicios</a>
-            <a className="hover:text-accent transition-colors" href="#paquetes">Precios</a>
-            <a className="hover:text-accent transition-colors" href="#proceso">Metodología</a>
-            <a className="hover:text-accent transition-colors" href="#chat">Asistente</a>
+            <a className="hover:text-accent transition-colors" href="#paquetes">Paquetes</a>
+            <a className="hover:text-accent transition-colors" href="#proceso">CÃ³mo funciona</a>
+            <a className="hover:text-accent transition-colors" href="#chat">Contacto</a>
           </div>
           {/* CTA */}
           <div data-purpose="nav-cta">
             <a
               className="bg-white text-black px-6 py-2 rounded-full text-sm font-bold hover:bg-accent hover:text-black transition-all duration-300"
-              href="https://wa.me/525647943262?text=Hola,%20vi%20tu%20página%20de%20Presencia%20Digital%20y%20me%20gustaría%20recibir%20más%20información."
+              href="https://wa.me/525647943262?text=Hola,%20vi%20tu%20pÃ¡gina%20de%20Presencia%20Digital%20y%20me%20gustarÃ­a%20recibir%20mÃ¡s%20informaciÃ³n."
               target="_blank"
               rel="noreferrer"
             >
@@ -183,8 +149,8 @@ export default function App() {
           {/* Static Image Background */}
           <div className="absolute inset-0 w-full h-full z-0">
             <img 
-              src="/hero_final.png" 
-              alt="Presencia Digital AI Background" 
+              src="/hero-on-cafe.png" 
+              alt="Negocio local pasando de apagado a presencia digital ON" 
               className="w-full h-full object-cover object-[75%_center] md:object-right opacity-100 transition-opacity duration-1000"
               referrerPolicy="no-referrer"
             />
@@ -206,41 +172,33 @@ export default function App() {
               className="text-left max-w-2xl"
             >
               <span className="inline-block py-1 px-3 rounded-full border border-accent/30 text-accent text-xs font-bold tracking-widest uppercase mb-6 bg-accent/5 backdrop-blur-sm">
-                ✦ Branding visual + Reels + IA
+                âœ¦ Presencia Digital ON
               </span>
               <h1 className="font-heading text-6xl md:text-8xl font-extrabold leading-tight mb-8 text-white tracking-tighter">
-                Haz que tu negocio <span className="accent-gradient">se vea premium</span> online
+                ENCIENDE TU <span className="accent-gradient">NEGOCIO.</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-xl leading-relaxed font-medium">
-                Convertimos redes normales en una presencia visual moderna: reels, UGC, captions y piezas listas para publicar, sin procesos lentos ni producción complicada.
+                Haz que tu negocio se vea mejor, atienda mejor y venda con menos caos. Presencia visual, contenido, WhatsApp Business y sistema simple para negocios locales. No hacemos posts. Encendemos negocios.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-block text-center px-10 py-4 bg-accent text-black rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] transition-all"
-                  href="https://wa.me/525647943262?text=Hola,%20quiero%20una%20propuesta%20para%20mejorar%20la%20presencia%20digital%20de%20mi%20negocio."
+                  href="https://wa.me/525647943262?text=Hola,%20quiero%20poner%20mi%20negocio%20en%20ON"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Recibir propuesta
+                  Quiero poner mi negocio en ON
                 </motion.a>
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center justify-center px-10 py-4 glass-effect rounded-xl font-bold text-lg hover:bg-white/10 transition-all text-white border border-white/10"
-                  href="#paquetes"
+                  href="#proceso"
                 >
-                  Ver paquetes
+                  Ver cÃ³mo funciona
                 </motion.a>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {targetNiches.slice(0, 5).map((niche) => (
-                  <span key={niche.label} className="rounded-full border border-white/10 bg-black/30 px-4 py-2 text-xs font-bold uppercase tracking-widest text-gray-300 backdrop-blur-sm">
-                    {niche.label}
-                  </span>
-                ))}
               </div>
             </motion.div>
           </div>
@@ -248,71 +206,6 @@ export default function App() {
           <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-glow-pulse z-10"></div>
           <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary-container/10 rounded-full blur-[120px] animate-glow-pulse z-10" style={{ animationDelay: '1.5s' }}></div>
         </section>
-
-        {/* Commercial Clarity Section */}
-        <motion.section
-          {...fadeInUp}
-          className="py-20 bg-[#050505] border-y border-white/5"
-          data-purpose="commercial-clarity"
-        >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-center">
-              <div>
-                <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Qué hacemos realmente</span>
-                <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight tracking-tighter">
-                  No vendemos publicaciones. Construimos percepción premium.
-                </h2>
-                <p className="text-gray-300 text-lg leading-relaxed font-medium">
-                  Tu Instagram, TikTok y WhatsApp son la primera impresión de tu negocio. Si se ven improvisados, pierdes confianza antes de que te escriban. Presencia Digital ordena tu imagen, crea contenido moderno y deja claro por qué alguien debería elegirte.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {[
-                  { title: 'Claridad', text: 'Que entiendan qué haces y por qué elegirte.' },
-                  { title: 'Confianza', text: 'Que tu negocio se vea activo, actual y profesional.' },
-                  { title: 'Conversión', text: 'Que cada pieza empuje a mensaje, llamada o visita.' },
-                ].map((item) => (
-                  <div key={item.title} className="rounded-3xl border border-white/10 bg-white/[0.03] p-6 shadow-xl hover:border-accent/30 transition-all">
-                    <div className="mb-5 h-10 w-10 rounded-xl bg-accent/20 border border-accent/30"></div>
-                    <h3 className="font-heading text-xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-sm text-gray-400 leading-relaxed">{item.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Niches Section */}
-        <motion.section
-          {...fadeInUp}
-          className="py-20 bg-black"
-          data-purpose="target-niches"
-        >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <div>
-                <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Especialidad</span>
-                <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-white tracking-tighter">
-                  Para negocios que necesitan verse mejor para vender mejor
-                </h2>
-              </div>
-              <p className="text-gray-400 max-w-xl font-medium">
-                Adaptamos el estilo visual al giro del negocio para que no parezca contenido genérico de agencia.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {targetNiches.map((niche) => (
-                <div key={niche.label} className="group rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent p-7 hover:border-accent/40 transition-all">
-                  <h3 className="font-heading text-2xl font-bold text-white mb-2 group-hover:text-accent transition-colors">{niche.label}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{niche.value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
 
         {/* Influencer Digital Section */}
         <motion.section 
@@ -326,7 +219,7 @@ export default function App() {
               
               <div className="relative z-10">
                 <span className="inline-block py-1 px-3 rounded-full border border-cyan-400/30 text-cyan-400 text-xs font-bold tracking-widest uppercase mb-6 bg-cyan-400/5 backdrop-blur-sm">
-                  ✦ El Futuro del Branding
+                  âœ¦ El Futuro del Branding
                 </span>
                 <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-8 leading-tight tracking-tighter">
                   Creamos tu <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-lime-400">Influencer Digital</span>: La cara de tu marca en la era de la IA
@@ -338,8 +231,8 @@ export default function App() {
                       <Sparkles className="w-6 h-6 text-cyan-400" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-lg mb-1">Identidad Única</h4>
-                      <p className="text-gray-400 text-sm">Personalidad y estética diseñada exclusivamente para conectar con tu audiencia ideal.</p>
+                      <h4 className="text-white font-bold text-lg mb-1">Identidad Ãšnica</h4>
+                      <p className="text-gray-400 text-sm">Personalidad y estÃ©tica diseÃ±ada exclusivamente para conectar con tu audiencia ideal.</p>
                     </div>
                   </div>
                   
@@ -349,7 +242,7 @@ export default function App() {
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-lg mb-1">Ahorro de Costos</h4>
-                      <p className="text-gray-400 text-sm">Sin viáticos, sin problemas de agenda y sin costos recurrentes de modelos reales.</p>
+                      <p className="text-gray-400 text-sm">Sin viÃ¡ticos, sin problemas de agenda y sin costos recurrentes de modelos reales.</p>
                     </div>
                   </div>
                   
@@ -359,7 +252,7 @@ export default function App() {
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-lg mb-1">Escalabilidad</h4>
-                      <p className="text-gray-400 text-sm">Contenido infinito 24/7. Tu influencer nunca duerme y siempre está en tendencia.</p>
+                      <p className="text-gray-400 text-sm">Contenido infinito 24/7. Tu influencer nunca duerme y siempre estÃ¡ en tendencia.</p>
                     </div>
                   </div>
                 </div>
@@ -423,9 +316,9 @@ export default function App() {
           className="py-20" id="servicios"
         >
           <div className="max-w-7xl mx-auto px-6 text-center">
-            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">¿Te identificas?</span>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">Tu negocio puede ser bueno, pero si se ve débil online pierde ventas</h2>
-            <p className="text-gray-300 text-lg mb-12 max-w-2xl mx-auto font-medium">El cliente decide en segundos si confía o no. Redes descuidadas, fotos pobres y contenido sin dirección hacen que tu negocio parezca menos profesional de lo que realmente es.</p>
+            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Â¿Te identificas?</span>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">Tu negocio puede ser bueno, pero verse apagado.</h2>
+            <p className="text-gray-300 text-lg mb-12 max-w-2xl mx-auto font-medium">Si tus redes se ven improvisadas, tu WhatsApp estÃ¡ desordenado o tus clientes se pierden entre mensajes, tu negocio pierde confianza antes de vender.</p>
             
             <motion.div 
               variants={staggerContainer}
@@ -435,10 +328,10 @@ export default function App() {
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left"
             >
               {[
-                { emoji: "⏰", title: "Sin tiempo para publicar", desc: "El negocio te consume. Las redes sociales siempre quedan para después." },
-                { emoji: "📸", title: "Sin fotos profesionales", desc: "Un fotógrafo sale caro y el resultado llega semanas después." },
-                { emoji: "📉", title: "Cuenta abandonada", desc: "Meses sin publicar destruyen tu alcance y credibilidad ante nuevos clientes." },
-                { emoji: "🧩", title: "Contenido genérico", desc: "Las agencias tradicionales te dan lo mismo que a todos. Nosotros creamos piezas específicas para tu giro y tu cliente." }
+                { icon: Clock, title: "Perfil poco profesional", desc: "El negocio te consume. Las redes sociales siempre quedan para despuÃ©s." },
+                { icon: Camera, title: "Fotos y contenido sin intenciÃ³n", desc: "Un fotÃ³grafo sale caro y el resultado llega semanas despuÃ©s." },
+                { icon: MessageSquareWarning, title: "WhatsApp sin orden", desc: "Los mensajes se mezclan, las dudas se pierden y atender se vuelve caos." },
+                { icon: Boxes, title: "Contenido genÃ©rico", desc: "Las agencias tradicionales te dan lo mismo que a todos. Nosotros creamos piezas especÃ­ficas para tu giro y tu cliente." }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -446,7 +339,9 @@ export default function App() {
                   whileHover={{ y: -5, borderColor: "rgba(204, 255, 0, 0.3)" }}
                   className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 transition-all group"
                 >
-                  <div className="text-3xl mb-4 group-hover:scale-110 transition-transform inline-block">{item.emoji}</div>
+                  <div className="w-12 h-12 mb-4 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center text-accent group-hover:scale-110 transition-transform">
+                    <item.icon className="w-6 h-6" aria-hidden="true" />
+                  </div>
                   <h3 className="font-heading text-xl font-bold mb-3 text-white">{item.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
@@ -455,7 +350,7 @@ export default function App() {
             
             <div className="mt-16 flex items-center justify-center space-x-4">
               <div className="flex-1 h-px bg-white/10"></div>
-              <span className="text-gray-500 uppercase text-xs tracking-widest font-bold">La solución</span>
+              <span className="text-gray-500 uppercase text-xs tracking-widest font-bold">La soluciÃ³n</span>
               <div className="flex-1 h-px bg-white/10"></div>
             </div>
           </div>
@@ -469,8 +364,8 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Nuestras soluciones</span>
-              <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">Contenido moderno con intención comercial.</h2>
-              <p className="text-gray-300 text-lg max-w-2xl mx-auto font-medium">Usamos IA, dirección creativa y estructura comercial para que tu marca se vea actual, confiable y lista para vender.</p>
+              <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">De negocio OFF a negocio ON.</h2>
+              <p className="text-gray-300 text-lg max-w-2xl mx-auto font-medium">Ordenamos cÃ³mo se ve tu negocio, cÃ³mo te escriben y cÃ³mo atiendes a tus clientes.</p>
             </div>
             <motion.div 
               variants={staggerContainer}
@@ -480,11 +375,11 @@ export default function App() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
               {[
-                { emoji: "🤖", title: "Imágenes y video con IA", desc: "Generamos contenido visual de calidad profesional sin necesidad de sesión fotográfica. Tu negocio siempre se ve impecable." },
-                { emoji: "📅", title: "Contenido listo para publicar", desc: "Te entregamos cada pieza con el caption, hashtags y horario ideal para que publiques con un solo clic." },
-                { emoji: "✍️", title: "Copy + hashtags optimizados", desc: "Cada post lleva el texto ideal para enganchar a tu audiencia y captions pensados para vender." },
-                { emoji: "🎯", title: "Estrategia por giro", desc: "No es contenido genérico — adaptamos cada pieza a tu tipo de negocio, tu zona y tu cliente ideal." },
-                { emoji: "⚡", title: "Arranque en 48 horas", desc: "Sin procesos largos. Una llamada de 20 minutos y en dos días tienes tu primer paquete de contenido listo." }
+                { icon: Eye, title: "Presencia visual ON", desc: "PÃ¡ginas y perfiles que transmiten claridad y confianza." },
+                { icon: Film, title: "Contenido y reels", desc: "Contenido pensado para inspirar, conectar y generar mÃ¡s mensajes." },
+                { icon: MessagesSquare, title: "WhatsApp Business", desc: "Organiza tus mensajes y atiende mejor sin perder oportunidades." },
+                { icon: MapPin, title: "Google Maps", desc: "Aparece cuando te buscan y guÃ­a a tus clientes con mÃ¡s claridad." },
+                { icon: CalendarCheck, title: "Clientes, citas y seguimiento", desc: "Control de pedidos, citas y seguimiento sin caos." }
               ].map((val, i) => (
                 <motion.div 
                   key={i}
@@ -492,7 +387,9 @@ export default function App() {
                   whileHover={{ y: -8, backgroundColor: "rgba(255, 255, 255, 0.06)", borderColor: "rgba(204, 255, 0, 0.5)" }}
                   className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 transition-all group shadow-xl"
                 >
-                  <div className="w-14 h-14 bg-accent/20 rounded-2xl flex items-center justify-center mb-6 text-3xl group-hover:scale-110 transition-transform">{val.emoji}</div>
+                  <div className="w-14 h-14 bg-accent/10 border border-accent/20 rounded-2xl flex items-center justify-center mb-6 text-accent group-hover:scale-110 transition-transform">
+                    <val.icon className="w-7 h-7" aria-hidden="true" />
+                  </div>
                   <h3 className="font-heading text-2xl font-bold mb-4 text-white">{val.title}</h3>
                   <p className="text-gray-300 text-base leading-relaxed">{val.desc}</p>
                 </motion.div>
@@ -502,78 +399,6 @@ export default function App() {
         </motion.section>
 
 
-        {/* Visual Transformation Section */}
-        <motion.section
-          {...fadeInUp}
-          className="py-24 bg-black border-y border-white/5"
-          data-purpose="visual-transformation"
-        >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16">
-              <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Antes vs después</span>
-              <h2 className="font-heading text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tighter">
-                La transformación que sí se nota
-              </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto font-medium">
-                El objetivo no es solo publicar más. Es que tu negocio se vea más confiable, moderno y deseable.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {transformationCases.map((item) => (
-                <motion.div
-                  key={item.before}
-                  variants={fadeInUp}
-                  whileHover={{ y: -6, borderColor: 'rgba(204, 255, 0, 0.35)' }}
-                  className="rounded-[2rem] border border-white/10 bg-white/[0.03] p-7 transition-all"
-                >
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    <div className="rounded-2xl border border-red-400/10 bg-red-400/5 p-4">
-                      <p className="text-[10px] uppercase tracking-widest text-red-300/80 mb-2 font-bold">Antes</p>
-                      <p className="text-sm text-gray-300 font-semibold">{item.before}</p>
-                    </div>
-                    <div className="rounded-2xl border border-accent/20 bg-accent/10 p-4">
-                      <p className="text-[10px] uppercase tracking-widest text-accent mb-2 font-bold">Después</p>
-                      <p className="text-sm text-white font-semibold">{item.after}</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-400 leading-relaxed text-sm">{item.detail}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Authority Section */}
-        <motion.section
-          {...fadeInUp}
-          className="py-24 bg-[#0a0a0a]"
-          data-purpose="authority"
-        >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-              <div>
-                <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Por qué funciona</span>
-                <h2 className="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tighter">
-                  IA con dirección creativa, no contenido al azar
-                </h2>
-                <p className="text-gray-300 text-lg leading-relaxed font-medium">
-                  La diferencia no está solo en generar imágenes. Está en saber qué decir, cómo mostrarlo, qué emoción activar y cómo llevar al cliente a escribirte.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                {authorityPoints.map((point, index) => (
-                  <div key={point} className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 hover:border-cyan-400/30 transition-all">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 font-black">0{index + 1}</span>
-                    <p className="text-white font-semibold leading-relaxed">{point}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
         {/* Pricing Section */}
         <motion.section 
           {...fadeInUp}
@@ -582,16 +407,16 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Tarifas</span>
-              <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-white">Elige cómo quieres modernizar tu presencia</h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">Paquetes claros para empezar rápido, validar contenido y convertir tus redes en una herramienta comercial.</p>
+              <h2 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-white">Paquetes para encender tu negocio</h2>
+              <p className="text-gray-400 max-w-2xl mx-auto">Elige el nivel de presencia y orden que necesita tu negocio para verse mejor, atender mejor y vender con menos caos.</p>
             </div>
 
-            {/* CONTENIDO IA */}
+            {/* NEGOCIO ON */}
             <div className="mb-24">
               <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
                 <div className="text-left">
-                  <h3 className="font-heading text-3xl font-bold text-accent mb-2">CONTENIDO IA</h3>
-                  <p className="text-gray-400">Contenido profesional listo para publicar</p>
+                  <h3 className="font-heading text-3xl font-bold text-accent mb-2">NEGOCIO ON</h3>
+                  <p className="text-gray-400">Sistema visual y operativo para negocios locales</p>
                 </div>
               </div>
               
@@ -604,16 +429,16 @@ export default function App() {
               >
                 {/* Starter */}
                 <motion.div variants={fadeInUp} className="p-8 rounded-3xl glass-effect border border-white/5 flex flex-col hover:border-white/20 transition-all group">
-                  <h4 className="font-heading text-2xl font-bold mb-2">Starter</h4>
+                  <h4 className="font-heading text-2xl font-bold mb-2">Starter ON</h4>
                   <div className="mb-8">
                     <span className="text-4xl font-extrabold text-white">$800</span>
                     <span className="text-gray-500 text-sm ml-2">MXN / mes</span>
                   </div>
                   <ul className="space-y-4 text-sm text-gray-400 mb-10 flex-1">
-                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">✓</span> 8 imágenes IA</li>
-                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">✓</span> Captions + hashtags</li>
-                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">✓</span> 1 red social</li>
-                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">✓</span> Entrega en carpeta organizada</li>
+                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">âœ“</span> 8 imÃ¡genes IA</li>
+                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">âœ“</span> Captions + hashtags</li>
+                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">âœ“</span> 1 red social</li>
+                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">âœ“</span> Entrega en carpeta organizada</li>
                   </ul>
                   <motion.a 
                     whileHover={{ scale: 1.02 }}
@@ -632,17 +457,17 @@ export default function App() {
                   variants={fadeInUp}
                   className="p-8 rounded-3xl bg-accent text-black flex flex-col relative transform md:scale-105 shadow-2xl z-10"
                 >
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-black uppercase tracking-tighter px-4 py-1 rounded-full shadow-xl">Más Popular</div>
-                  <h4 className="font-heading text-2xl font-bold mb-2">Pro</h4>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-black uppercase tracking-tighter px-4 py-1 rounded-full shadow-xl">MÃ¡s Popular</div>
+                  <h4 className="font-heading text-2xl font-bold mb-2">Pro ON</h4>
                   <div className="mb-8">
                     <span className="text-4xl font-extrabold">$1,500</span>
                     <span className="text-black/60 text-sm ml-2">MXN / mes</span>
                   </div>
                   <ul className="space-y-4 text-sm text-black/80 mb-10 flex-1">
-                    <li className="flex items-start"><span className="mr-3 font-bold">✓</span> 16 imágenes IA</li>
-                    <li className="flex items-start"><span className="mr-3 font-bold">✓</span> 4 videos cortos IA (15–30s)</li>
-                    <li className="flex items-start"><span className="mr-3 font-bold">✓</span> Captions con CTA de ventas</li>
-                    <li className="flex items-start"><span className="mr-3 font-bold">✓</span> 2 redes sociales</li>
+                    <li className="flex items-start"><span className="mr-3 font-bold">âœ“</span> 16 imÃ¡genes IA</li>
+                    <li className="flex items-start"><span className="mr-3 font-bold">âœ“</span> 4 videos cortos IA (15â€“30s)</li>
+                    <li className="flex items-start"><span className="mr-3 font-bold">âœ“</span> Captions con CTA de ventas</li>
+                    <li className="flex items-start"><span className="mr-3 font-bold">âœ“</span> 2 redes sociales</li>
                   </ul>
                   <motion.a 
                     whileHover={{ scale: 1.02 }}
@@ -658,16 +483,16 @@ export default function App() {
 
                 {/* Full Pack */}
                 <motion.div variants={fadeInUp} className="p-8 rounded-3xl glass-effect border border-white/5 flex flex-col hover:border-white/20 transition-all">
-                  <h4 className="font-heading text-2xl font-bold mb-2">Full Pack</h4>
+                  <h4 className="font-heading text-2xl font-bold mb-2">Full ON</h4>
                   <div className="mb-8">
                     <span className="text-4xl font-extrabold text-white">$2,500</span>
                     <span className="text-gray-500 text-sm ml-2">MXN / mes</span>
                   </div>
                   <ul className="space-y-4 text-sm text-gray-400 mb-10 flex-1">
-                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">✓</span> 20 imágenes IA</li>
-                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">✓</span> 5 videos cortos IA</li>
-                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">✓</span> Copy completo para cada pieza</li>
-                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">✓</span> Entrega semanal</li>
+                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">âœ“</span> 20 imÃ¡genes IA</li>
+                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">âœ“</span> 5 videos cortos IA</li>
+                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">âœ“</span> Copy completo para cada pieza</li>
+                    <li className="flex items-start"><span className="text-accent mr-3 font-bold">âœ“</span> Entrega semanal</li>
                   </ul>
                   <motion.a 
                     whileHover={{ scale: 1.02 }}
@@ -683,34 +508,34 @@ export default function App() {
               </motion.div>
             </div>
 
-            {/* INFLUENCER DIGITAL IA */}
+            {/* EXTRAS Y PRODUCTOS IA */}
             <div>
               <div className="text-left mb-10">
-                <h3 className="font-heading text-3xl font-bold text-accent mb-2">INFLUENCER DIGITAL IA</h3>
-                <p className="text-gray-400">Creamos la cara de tu marca</p>
+                <h3 className="font-heading text-3xl font-bold text-accent mb-2">EXTRAS Y PRODUCTOS IA</h3>
+                <p className="text-gray-400">Soluciones adicionales para marcas que quieren contenido mÃ¡s avanzado.</p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                {/* Creación del Influencer */}
+                {/* CreaciÃ³n del Influencer */}
                 <motion.div 
                   variants={fadeInUp}
                   className="p-10 rounded-[2.5rem] border border-white/5 bg-gradient-to-br from-cyan-400/10 to-transparent flex flex-col hover:border-cyan-400/30 transition-all shadow-xl group"
                 >
-                  <h4 className="font-heading text-2xl font-bold mb-2 text-white">Creación del Influencer</h4>
+                  <h4 className="font-heading text-2xl font-bold mb-2 text-white">CreaciÃ³n del Influencer</h4>
                   <div className="mb-8">
                     <span className="text-4xl font-extrabold text-white">$3,500</span>
-                    <span className="text-gray-500 text-sm ml-2 font-bold">MXN (Pago único)</span>
+                    <span className="text-gray-500 text-sm ml-2 font-bold">MXN (Pago Ãºnico)</span>
                   </div>
                   <ul className="space-y-4 text-sm text-gray-300 mb-10 flex-1">
-                    <li className="flex items-start"><span className="text-cyan-400 mr-3 font-bold">✦</span> Diseño de personaje completo</li>
-                    <li className="flex items-start"><span className="text-cyan-400 mr-3 font-bold">✦</span> 8 piezas iniciales de contenido</li>
-                    <li className="flex items-start"><span className="text-cyan-400 mr-3 font-bold">✦</span> Guía de uso</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-3 font-bold">âœ¦</span> DiseÃ±o de personaje completo</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-3 font-bold">âœ¦</span> 8 piezas iniciales de contenido</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-3 font-bold">âœ¦</span> GuÃ­a de uso</li>
                   </ul>
                   <motion.a 
                     whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(34, 211, 238, 0.3)" }}
                     whileTap={{ scale: 0.98 }}
                     className="block text-center py-4 rounded-2xl bg-cyan-400 text-black font-bold transition-all" 
-                    href="https://wa.me/525647943262?text=Hola,%20me%20interesa%20el%20servicio%20de%20Creación%20de%20Influencer%20Digital." 
+                    href="https://wa.me/525647943262?text=Hola,%20me%20interesa%20el%20servicio%20de%20CreaciÃ³n%20de%20Influencer%20Digital." 
                     target="_blank" 
                     rel="noreferrer"
                   >
@@ -729,9 +554,9 @@ export default function App() {
                     <span className="text-gray-500 text-sm ml-2 font-bold">MXN / mes</span>
                   </div>
                   <ul className="space-y-4 text-sm text-gray-300 mb-10 flex-1">
-                    <li className="flex items-start"><span className="text-lime-400 mr-3 font-bold">✦</span> 12 imágenes IA con tu influencer</li>
-                    <li className="flex items-start"><span className="text-lime-400 mr-3 font-bold">✦</span> 3 videos cortos IA (15–30s)</li>
-                    <li className="flex items-start"><span className="text-lime-400 mr-3 font-bold">✦</span> Captions en la voz del personaje</li>
+                    <li className="flex items-start"><span className="text-lime-400 mr-3 font-bold">âœ¦</span> 12 imÃ¡genes IA con tu influencer</li>
+                    <li className="flex items-start"><span className="text-lime-400 mr-3 font-bold">âœ¦</span> 3 videos cortos IA (15â€“30s)</li>
+                    <li className="flex items-start"><span className="text-lime-400 mr-3 font-bold">âœ¦</span> Captions en la voz del personaje</li>
                   </ul>
                   <motion.a 
                     whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(163, 230, 53, 0.3)" }}
@@ -766,7 +591,7 @@ export default function App() {
                   </div>
                   <div className="text-right">
                     <span className="text-accent font-extrabold text-2xl">$1,500</span>
-                    <span className="block text-[10px] text-gray-500 font-bold uppercase">Pago único</span>
+                    <span className="block text-[10px] text-gray-500 font-bold uppercase">Pago Ãºnico</span>
                   </div>
                 </motion.div>
                 <motion.div 
@@ -775,11 +600,11 @@ export default function App() {
                 >
                   <div className="text-left">
                     <h4 className="font-bold text-xl text-white mb-1">Redes desde cero</h4>
-                    <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">Configuración experta y optimización de perfiles.</p>
+                    <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">ConfiguraciÃ³n experta y optimizaciÃ³n de perfiles.</p>
                   </div>
                   <div className="text-right">
                     <span className="text-accent font-extrabold text-2xl">$2,500</span>
-                    <span className="block text-[10px] text-gray-500 font-bold uppercase">Pago único</span>
+                    <span className="block text-[10px] text-gray-500 font-bold uppercase">Pago Ãºnico</span>
                   </div>
                 </motion.div>
               </div>
@@ -793,8 +618,8 @@ export default function App() {
           className="py-20 bg-surface" id="proceso"
         >
           <div className="max-w-3xl mx-auto px-6 text-center">
-            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Metodología</span>
-            <h2 className="font-heading text-4xl font-bold mb-8 text-white">Proceso claro, sin complicarte</h2>
+            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">CÃ³mo funciona</span>
+            <h2 className="font-heading text-4xl font-bold mb-8 text-white">Un sistema simple para encender tu negocio.</h2>
             <motion.div 
                variants={staggerContainer}
                initial="initial"
@@ -803,11 +628,11 @@ export default function App() {
               className="space-y-0 text-left"
             >
               {[
-                { step: "01", title: "Conversación inicial", desc: "Una llamada o chat corto para entender tu negocio, tu cliente ideal y qué quieres vender más." },
-                { step: "02", title: "Análisis de tu cuenta", desc: "Revisamos el estado actual de tus redes — o creamos el perfil desde cero si no tienes." },
-                { step: "03", title: "Propuesta de contenido", desc: "Te mostramos una propuesta visual clara: tipo de contenido, enfoque, calendario y mensajes clave." },
-                { step: "04", title: "Ejecución con IA", desc: "Generamos las imágenes, videos y copys. Tú apruebas o pedimos ajustes antes de publicar." },
-                { step: "05", title: "Publicación y seguimiento", desc: "Publicamos en los mejores horarios y te mandamos el reporte de resultados cada mes." }
+                { step: "01", title: "Revisamos tu presencia actual", desc: "Vemos cÃ³mo se ve tu negocio hoy en redes, WhatsApp, Google y puntos de contacto." },
+                { step: "02", title: "Mejoramos cÃ³mo se ve tu negocio", desc: "Ajustamos imagen, claridad visual y mensajes para que transmitas mÃ¡s confianza." },
+                { step: "03", title: "Ordenamos tu WhatsApp y clientes", desc: "Definimos una forma simple de atender, responder y no perder oportunidades." },
+                { step: "04", title: "Creamos contenido visual", desc: "Creamos piezas, reels y textos que hacen que tu negocio se vea activo y comprable." },
+                { step: "05", title: "Medimos y ajustamos", desc: "Revisamos quÃ© funciona y afinamos presencia, atenciÃ³n y seguimiento." }
               ].map((item, i) => (
                 <motion.div 
                   key={i}
@@ -831,16 +656,16 @@ export default function App() {
           className="py-20" id="chat"
         >
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Asistente IA</span>
-            <h2 className="font-heading text-4xl font-bold mb-4 text-white">¿Tienes dudas? Pregunta aquí</h2>
-            <p className="text-gray-400 mb-8 font-medium">Nuestro asistente responde al instante sobre servicios, precios y cómo podemos ayudar a tu negocio.</p>
+            <span className="text-accent text-sm font-bold tracking-widest uppercase mb-4 block">Asistente ON</span>
+            <h2 className="font-heading text-4xl font-bold mb-4 text-white">Â¿Tienes dudas? Pregunta aquÃ­</h2>
+            <p className="text-gray-400 mb-8 font-medium">Nuestro asistente responde al instante sobre servicios, precios y cÃ³mo podemos ayudar a tu negocio.</p>
             
             <div className="glass-effect rounded-3xl overflow-hidden text-left border border-white/10 shadow-2xl relative">
               <div className="p-4 border-b border-white/10 flex items-center space-x-3 bg-white/[0.02]">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                 <div>
                   <p className="text-sm font-bold text-white">Asistente Presencia Digital</p>
-                  <p className="text-[10px] text-gray-500">Responde en segundos · Con IA</p>
+                  <p className="text-[10px] text-gray-500">Responde en segundos Â· Con IA</p>
                 </div>
               </div>
               
@@ -872,9 +697,9 @@ export default function App() {
               </div>
               
               <div className="p-4 border-t border-white/10 flex flex-wrap gap-2 bg-white/[0.01]">
-                <button className="px-3 py-1 text-[10px] border border-white/10 rounded-full hover:bg-white/5 text-gray-400 hover:text-white transition-colors" onClick={() => handleSend('¿Necesito enviarte fotos?')}>¿Necesito enviarte fotos?</button>
-                <button className="px-3 py-1 text-[10px] border border-white/10 rounded-full hover:bg-white/5 text-gray-400 hover:text-white transition-colors" onClick={() => handleSend('¿Hay plazos forzosos?')}>¿Hay plazos forzosos?</button>
-                <button className="px-3 py-1 text-[10px] border border-white/10 rounded-full hover:bg-white/5 text-gray-400 hover:text-white transition-colors" onClick={() => handleSend('¿Cómo empezamos?')}>¿Cómo empezamos?</button>
+                <button className="px-3 py-1 text-[10px] border border-white/10 rounded-full hover:bg-white/5 text-gray-400 hover:text-white transition-colors" onClick={() => handleSend('Â¿Necesito enviarte fotos?')}>Â¿Necesito enviarte fotos?</button>
+                <button className="px-3 py-1 text-[10px] border border-white/10 rounded-full hover:bg-white/5 text-gray-400 hover:text-white transition-colors" onClick={() => handleSend('Â¿Hay plazos forzosos?')}>Â¿Hay plazos forzosos?</button>
+                <button className="px-3 py-1 text-[10px] border border-white/10 rounded-full hover:bg-white/5 text-gray-400 hover:text-white transition-colors" onClick={() => handleSend('Â¿CÃ³mo empezamos?')}>Â¿CÃ³mo empezamos?</button>
               </div>
               
               <div className="p-4 border-t border-white/10 flex space-x-2 bg-white/[0.02]">
@@ -883,7 +708,7 @@ export default function App() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  placeholder="Escribe tu pregunta..." 
+                  placeholder="Escribe el giro de tu negocio..." 
                   type="text" 
                 />
                 <motion.button 
@@ -912,8 +737,8 @@ export default function App() {
             className="absolute top-0 right-0 w-64 h-64 bg-accent/10 blur-[100px] rounded-full"
           />
           <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-            <h2 className="font-heading text-5xl md:text-7xl font-extrabold mb-6 text-white">¿Listo para que tu negocio <span className="italic text-accent">se vea premium?</span></h2>
-            <p className="text-gray-300 text-xl mb-8 max-w-2xl mx-auto font-medium">Te damos una propuesta clara para mejorar tu imagen, ordenar tu contenido y empezar a publicar con intención comercial.</p>
+            <h2 className="font-heading text-5xl md:text-7xl font-extrabold mb-6 text-white">Â¿Tu negocio ya tiene valor. <span className="italic text-accent">Ahora hay que encenderlo.</span></h2>
+            <p className="text-gray-300 text-xl mb-8 max-w-2xl mx-auto font-medium">Haz que tu presencia digital estÃ© al nivel de lo que realmente ofreces.</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.a 
                 whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(204, 255, 0, 0.4)" }}
@@ -923,15 +748,15 @@ export default function App() {
                 target="_blank" 
                 rel="noreferrer"
               >
-                Pedir propuesta por WhatsApp
+                Cotizar por WhatsApp
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block glass-effect px-12 py-5 rounded-2xl font-bold text-xl transition-all" 
-                href="#chat"
+                href="#proceso"
               >
-                Hablar con la IA
+                Ver cÃ³mo funciona
               </motion.a>
             </div>
           </div>
@@ -947,10 +772,10 @@ export default function App() {
                 <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
                   <span className="font-heading font-extrabold text-black text-xl italic">P</span>
                 </div>
-                <span className="font-heading font-bold text-xl tracking-tighter">Presencia Digital</span>
+                <span className="font-heading font-bold text-xl tracking-tighter">Presencia Digital IA</span>
               </div>
-              <p className="text-gray-500 max-w-sm mb-6">Contenido IA profesional listo para publicar. Activamos tu negocio en 48 horas.</p>
-              <p className="text-xs text-gray-600">Satélite · Lomas Verdes · Naucalpan · CDMX</p>
+              <p className="text-gray-500 max-w-sm mb-6">Presencia Digital IA enciende negocios locales: mejor imagen, mejor atenciÃ³n y menos caos.</p>
+              <p className="text-xs text-gray-600">SatÃ©lite Â· Lomas Verdes Â· Naucalpan Â· CDMX</p>
               <p className="text-accent font-bold mt-2">
                 <a 
                   className="hover:translate-x-1 transition-transform inline-block" 
@@ -965,27 +790,28 @@ export default function App() {
             <div>
               <h4 className="font-heading font-bold mb-6 text-white">Servicios</h4>
               <ul className="space-y-4 text-gray-500 text-sm">
-                <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#servicios">Contenido IA</a></li>
+                <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#servicios">Negocio ON</a></li>
                 <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#influencer">Influencer Digital</a></li>
                 <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#paquetes">Landing Pages</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-heading font-bold mb-6 text-white">Compañía</h4>
+              <h4 className="font-heading font-bold mb-6 text-white">CompaÃ±Ã­a</h4>
               <ul className="space-y-4 text-gray-500 text-sm">
                 <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#hero">Sobre nosotros</a></li>
-                <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#proceso">Metodología</a></li>
+                <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#proceso">CÃ³mo funciona</a></li>
                 <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#chat">Contacto</a></li>
                 <li><a className="hover:text-accent transition-colors hover:translate-x-1 block" href="#">Aviso de Privacidad</a></li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-gray-600 text-[10px]">
-            <p>© 2024 Presencia Digital. Todos los derechos reservados.</p>
-            <p className="mt-4 md:mt-0">Diseñado para la nueva generación de negocios locales.</p>
+            <p>Â© 2024 Presencia Digital. Todos los derechos reservados.</p>
+            <p className="mt-4 md:mt-0">DiseÃ±ado para la nueva generaciÃ³n de negocios locales.</p>
           </div>
         </div>
       </footer>
     </div>
   );
 }
+
