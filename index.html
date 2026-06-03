@@ -424,10 +424,10 @@
     }
 
     .hero {
-      min-height: min(76svh, 640px);
+      min-height: min(72svh, 600px);
       display: flex;
       align-items: center;
-      padding-top: 84px;
+      padding-top: 76px;
       overflow: hidden;
       isolation: isolate;
     }
@@ -451,18 +451,18 @@
         linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.86) 26%, rgba(0,0,0,.34) 48%, rgba(0,0,0,.08) 75%, rgba(0,0,0,.28) 100%),
         linear-gradient(180deg, rgba(0,0,0,.14) 0%, rgba(0,0,0,.02) 54%, rgba(0,0,0,.48) 100%);
     }
-    .hero-content { width: min(660px, 100%); }
+    .hero-content { width: min(760px, 100%); }
     .hero h1 {
-      margin: 22px 0 20px;
-      font-size: clamp(2.7rem, 4.8vw, 4.8rem);
-      line-height: .94;
-      letter-spacing: -.055em;
+      margin: 20px 0 18px;
+      font-size: clamp(2.55rem, 4.15vw, 4.25rem);
+      line-height: 1.02;
+      letter-spacing: -.045em;
       font-weight: 1000;
       text-transform: uppercase;
     }
     .hero p {
       width: min(560px, 100%);
-      margin: 0 0 26px;
+      margin: 0 0 22px;
       color: rgba(255,255,255,.82);
       font-size: clamp(1rem, 1.28vw, 1.18rem);
       line-height: 1.45;
@@ -543,6 +543,67 @@
     }
     .card h3 { margin: 0 0 14px; font-size: 1.35rem; line-height: 1.18; letter-spacing: -.035em; }
     .card p { margin: 0; color: var(--muted); line-height: 1.55; font-weight: 560; }
+    .improvement-list {
+      width: min(800px, 100%);
+      margin: -8px auto 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .improvement-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .improvement-item:last-child { border-bottom: 0; }
+    .improvement-check {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #050505;
+      background: var(--lime);
+      font-size: .86rem;
+      font-weight: 1000;
+      box-shadow: 0 0 22px rgba(204,255,0,.18);
+    }
+    .improvement-title {
+      display: block;
+      color: #fff;
+      font-weight: 950;
+      letter-spacing: -.02em;
+      margin-bottom: 3px;
+    }
+    .improvement-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-weight: 620;
+    }
+    .friction-list { width: min(850px, 100%); }
+    .friction-list .improvement-check {
+      width: 22px;
+      height: 22px;
+      font-size: .74rem;
+    }
+    .friction-list .improvement-item {
+      grid-template-columns: 30px 1fr;
+      padding: 16px 0;
+    }
+    .process-list { width: min(850px, 100%); }
+    .process-list .improvement-check {
+      width: 24px;
+      height: 24px;
+      font-size: .78rem;
+    }
+    .process-list .improvement-item {
+      grid-template-columns: 34px 1fr;
+      padding: 15px 0;
+    }
     .diagnostic-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 13px; color: rgba(255,255,255,.78); font-weight: 700; }
     .diagnostic-list li { display: flex; gap: 11px; align-items: center; }
     .diagnostic-list li::before { content: '✓'; color: var(--lime); font-weight: 1000; }
@@ -715,15 +776,15 @@
     }
     .founder-card {
       border: 1px solid rgba(204,255,0,.18);
-      border-radius: 28px;
-      padding: 28px;
+      border-radius: 24px;
+      padding: 22px;
       background: radial-gradient(circle at 50% 0, rgba(204,255,0,.12), transparent 42%), rgba(255,255,255,.04);
       box-shadow: var(--shadow);
     }
     .photo-slot {
       aspect-ratio: 1;
-      border-radius: 24px;
-      margin-bottom: 22px;
+      border-radius: 20px;
+      margin-bottom: 18px;
       overflow: hidden;
       border: 1px solid rgba(204,255,0,.28);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
@@ -736,13 +797,13 @@
       object-position: center 23%;
       filter: saturate(1.05) contrast(1.04);
     }
-    .founder-card h3 { margin: 0 0 6px; font-size: 1.55rem; letter-spacing: -.04em; }
+    .founder-card h3 { margin: 0 0 6px; font-size: 1.3rem; letter-spacing: -.035em; }
     .founder-card p { margin: 0; color: var(--muted); line-height: 1.55; }
     .founder-role { color: rgba(255,255,255,.9) !important; font-weight: 850; }
-    .founder-meta { margin-top: 14px !important; color: rgba(255,255,255,.72) !important; font-weight: 800; }
+    .founder-meta { margin-top: 10px !important; color: rgba(255,255,255,.72) !important; font-weight: 800; }
     .profile-block {
-      margin-top: 18px;
-      padding-top: 18px;
+      margin-top: 16px;
+      padding-top: 16px;
       border-top: 1px solid var(--line);
     }
     .profile-block h4 {
@@ -764,14 +825,10 @@
       padding: 7px 10px;
       color: rgba(255,255,255,.78);
       background: rgba(204,255,0,.055);
-      font-size: .78rem;
+      font-size: .76rem;
       font-weight: 850;
     }
-    .profile-closing {
-      margin-top: 18px !important;
-      color: rgba(255,255,255,.9) !important;
-      font-weight: 850;
-    }
+    .profile-closing { margin-top: 16px !important; color: rgba(255,255,255,.9) !important; font-weight: 850; }
     .trust-card .placeholder-label {
       display: inline-flex;
       margin-bottom: 14px;
@@ -856,25 +913,25 @@
         border-color: rgba(204,255,0,.7);
       }
       .hero {
-        min-height: min(78svh, 620px);
+        min-height: min(76svh, 600px);
         align-items: flex-end;
-        padding: 120px 18px 26px;
+        padding: 116px 18px 24px;
       }
       .hero::before { background: linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,.94)); }
       .hero-bg img { object-position: 58% center; }
       .hero-content { width: 100%; }
       .hero h1 {
-        font-size: clamp(2.25rem, 10.5vw, 3.4rem);
-        line-height: .98;
-        letter-spacing: -.05em;
+        font-size: clamp(2rem, 8.8vw, 3rem);
+        line-height: 1.06;
+        letter-spacing: -.035em;
         margin: 16px 0 12px;
       }
       .hero p {
         max-width: 100%;
         font-size: .98rem;
         line-height: 1.35;
-        margin-bottom: 18px;
-        max-width: 20rem;
+        margin-bottom: 16px;
+        max-width: 22rem;
       }
       .hero-note { display: none; }
       .hero-switch,
@@ -961,6 +1018,45 @@
         font-size: .9rem;
         line-height: 1.38;
       }
+      .improvement-list {
+        margin-top: -4px;
+      }
+      .improvement-item {
+        grid-template-columns: 30px 1fr;
+        gap: 11px;
+        padding: 14px 0;
+      }
+      .improvement-check {
+        width: 23px;
+        height: 23px;
+        font-size: .78rem;
+      }
+      .improvement-title {
+        margin-bottom: 2px;
+        font-size: 1rem;
+      }
+      .improvement-item p {
+        font-size: .9rem;
+        line-height: 1.38;
+      }
+      .friction-list .improvement-item {
+        grid-template-columns: 28px 1fr;
+        padding: 13px 0;
+      }
+      .friction-list .improvement-check {
+        width: 21px;
+        height: 21px;
+        font-size: .72rem;
+      }
+      .process-list .improvement-item {
+        grid-template-columns: 30px 1fr;
+        padding: 13px 0;
+      }
+      .process-list .improvement-check {
+        width: 22px;
+        height: 22px;
+        font-size: .72rem;
+      }
       .plan h3 { margin-bottom: 12px; }
       .price { font-size: clamp(1.85rem, 9vw, 2.35rem); }
       .pay { margin: 6px 0 14px; }
@@ -1004,26 +1100,55 @@
         gap: 10px;
       }
       .founder-card {
-        display: grid;
-        grid-template-columns: 72px 1fr;
-        gap: 10px 14px;
-        padding: 18px;
+        display: block;
+        padding: 16px;
         border-radius: 20px;
       }
       .photo-slot {
-        width: 72px;
-        height: 72px;
+        width: min(100%, 150px);
+        height: auto;
         aspect-ratio: 1;
-        margin: 0;
+        margin: 0 0 14px;
         border-radius: 16px;
-        grid-row: span 3;
       }
       .founder-card h3 {
         font-size: 1.15rem;
       }
       .founder-card p {
-        margin-bottom: 2px;
+        margin-bottom: 6px;
         font-size: .9rem;
+      }
+      .profile-block {
+        margin-top: 12px;
+        padding-top: 12px;
+      }
+      .profile-block h4 {
+        margin-bottom: 8px;
+        font-size: .84rem;
+      }
+      .profile-block p {
+        font-size: .88rem;
+        line-height: 1.45;
+      }
+      .credential-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .credential-chips span {
+        width: auto;
+        max-width: 100%;
+        border-radius: 999px;
+        padding: 6px 10px;
+        font-size: 11px;
+        line-height: 1.15;
+        white-space: normal;
+      }
+      .profile-closing {
+        margin-top: 12px !important;
+        font-size: .9rem;
+        line-height: 1.45 !important;
       }
       .faq-grid {
         gap: 10px;
@@ -1071,11 +1196,11 @@
         font-size: 11px;
       }
       .hero {
-        min-height: min(76svh, 640px);
-        padding-top: 124px;
-        padding-bottom: 28px;
+        min-height: min(78svh, 620px);
+        padding-top: 118px;
+        padding-bottom: 24px;
       }
-      .hero h1 { font-size: clamp(2.05rem, 10vw, 3rem); }
+      .hero h1 { font-size: clamp(1.85rem, 8.8vw, 2.55rem); }
       .hero p { font-size: .94rem; }
       section { padding: 42px 16px; }
       .section-head { margin-bottom: 22px; }
@@ -1113,8 +1238,8 @@
       <div class="container">
         <div class="hero-content">
           <span class="eyebrow">ON · Presencia Digital IA</span>
-          <h1>Tu negocio ya es bueno. Ahora debe verse y operar mejor.</h1>
-          <p>Detectamos qué está frenando tu negocio y qué puedes mejorar para conseguir más clientes, más control y menos caos.</p>
+          <h1>Estás perdiendo clientes antes de que te escriban.</h1>
+          <p>Detectamos qué está frenando tu presencia digital, seguimiento y operación para que tu negocio se vea más confiable y pierda menos oportunidades.</p>
           <div class="hero-note">No hacemos posts. Encendemos negocios.</div>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/525647943262?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico ON <span aria-hidden="true">-></span></a>
@@ -1131,12 +1256,52 @@
           <span class="eyebrow">Diagnóstico ON</span>
           <h2>¿Qué está frenando tu negocio?</h2>
         </div>
-        <div class="grid grid-5">
-          <article class="card"><span class="icon"><i class="fa-regular fa-id-card"></i></span><h3>Imagen poco profesional</h3><p>Tu negocio se ve menos profesional de lo que realmente es.</p></article>
-          <article class="card"><span class="icon"><i class="fa-solid fa-user-clock"></i></span><h3>Falta de seguimiento</h3><p>Pierdes clientes por no dar seguimiento a tiempo.</p></article>
-          <article class="card"><span class="icon"><i class="fa-brands fa-whatsapp"></i></span><h3>Todo en WhatsApp</h3><p>Todo está en WhatsApp y tu memoria.</p></article>
-          <article class="card"><span class="icon"><i class="fa-solid fa-list-check"></i></span><h3>Poco control de citas y pagos</h3><p>Clientes, citas y pagos viven en demasiados lugares.</p></article>
-          <article class="card"><span class="icon"><i class="fa-solid fa-rotate"></i></span><h3>Tareas repetitivas</h3><p>Pasas demasiado tiempo en tareas repetitivas.</p></article>
+        <div class="improvement-list friction-list">
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Imagen poco profesional</span>Tu negocio se ve menos profesional de lo que realmente es.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Falta de seguimiento</span>Pierdes clientes por no dar seguimiento a tiempo.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Todo en WhatsApp</span>Todo está en WhatsApp y tu memoria.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Poco control de citas y pagos</span>Clientes, citas y pagos viven en demasiados lugares.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Tareas repetitivas</span>Pasas demasiado tiempo en tareas repetitivas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="como-lo-hacemos">
+      <div class="container">
+        <div class="section-head">
+          <h2>Cómo lo hacemos</h2>
+        </div>
+        <div class="improvement-list process-list">
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">1</span>
+            <p><span class="improvement-title">Auditamos</span>Revisamos tu presencia digital, WhatsApp, Google Maps, redes y seguimiento.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">2</span>
+            <p><span class="improvement-title">Detectamos</span>Encontramos dónde pierdes clientes, tiempo o control.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">3</span>
+            <p><span class="improvement-title">Priorizamos</span>Te decimos qué mejorar primero para tener más impacto.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">4</span>
+            <p><span class="improvement-title">Implementamos</span>Aplicamos solo lo necesario: presencia, seguimiento, control o automatización.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1170,11 +1335,23 @@
           <span class="eyebrow">Qué resolvemos</span>
           <h2>Lo que podemos mejorar</h2>
         </div>
-        <div class="grid grid-4">
-          <article class="card"><span class="icon"><i class="fa-solid fa-shield-heart"></i></span><h3>Más confianza</h3><p>Tu negocio debe verse tan bien como lo que ofrece.</p></article>
-          <article class="card"><span class="icon"><i class="fa-solid fa-bullseye"></i></span><h3>Más clientes</h3><p>Haz más fácil que te encuentren y te contacten.</p></article>
-          <article class="card"><span class="icon"><i class="fa-solid fa-list-check"></i></span><h3>Más control</h3><p>Organiza clientes, citas y seguimientos.</p></article>
-          <article class="card"><span class="icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span><h3>Menos caos</h3><p>Reduce tareas repetitivas y pérdidas de información.</p></article>
+        <div class="improvement-list">
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Más confianza</span>Tu negocio debe verse tan bien como lo que ofrece.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Más clientes</span>Haz más fácil que te encuentren y te contacten.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Más control</span>Organiza clientes, citas y seguimientos.</p>
+          </div>
+          <div class="improvement-item">
+            <span class="improvement-check" aria-hidden="true">✓</span>
+            <p><span class="improvement-title">Menos caos</span>Reduce tareas repetitivas y pérdidas de información.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1184,24 +1361,23 @@
         <div class="split-section">
           <div class="rich-copy">
             <span class="eyebrow">Quién está detrás</span>
-            <h2>Juan Carlos Rivero</h2>
-            <p>Fundador de Presencia Digital IA</p>
-            <p>IA aplicada para detectar oportunidades en negocios locales.</p>
+            <h2>Quién analiza tu negocio</h2>
+            <p>Soy Juan Carlos Rivero, fundador de Presencia Digital IA.</p>
+            <p>Ayudo a negocios locales a detectar dónde pierden clientes, confianza y control en su presencia digital, WhatsApp, Google Maps, redes y seguimiento.</p>
+            <p>Uso IA para analizar más rápido, encontrar oportunidades y convertirlas en acciones claras.</p>
           </div>
-          <aside class="founder-card" aria-label="Perfil de Juan Carlos Rivero">
+          <aside class="founder-card" aria-label="Perfil de Presencia Digital IA">
             <figure class="photo-slot">
               <img src="assets/Gemini_Generated_Image_9qzsbu9qzsbu9qzs.png" alt="Retrato de Juan Carlos Rivero, fundador de Presencia Digital IA" loading="lazy" width="768" height="1344">
             </figure>
-            <h3>Juan Carlos Rivero</h3>
             <p class="founder-role">Fundador de Presencia Digital IA</p>
-            <p>IA aplicada para detectar oportunidades en negocios locales</p>
             <p class="founder-meta">Presencia Digital IA · México</p>
             <div class="profile-block">
               <h4>Enfoque de trabajo</h4>
               <p>Auditamos tu presencia digital, WhatsApp, Google Maps, redes y seguimiento para detectar dónde pierdes clientes, tiempo o control.</p>
             </div>
             <div class="profile-block">
-              <h4>Respaldo técnico</h4>
+              <h4>Respaldo técnico discreto</h4>
               <div class="credential-chips" aria-label="Respaldo técnico">
                 <span>Google Cloud Generative AI</span>
                 <span>Google Cloud AI Agents</span>
