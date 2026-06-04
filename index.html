@@ -1511,18 +1511,16 @@
             <span class="eyebrow">Quién está detrás</span>
             <h2>Quién analiza tu negocio</h2>
             <p>Soy Juan Carlos Rivero, fundador de Presencia Digital IA.</p>
-            <p>Ayudo a negocios locales a detectar dónde pierden clientes, confianza y control en su presencia digital, WhatsApp, Google Maps, redes y seguimiento.</p>
-            <p>Uso IA para analizar más rápido, encontrar oportunidades y convertirlas en acciones claras.</p>
+            <p>Ayudo a negocios locales a detectar dónde pierden clientes, confianza y control para convertirlo en acciones claras.</p>
           </div>
           <aside class="founder-card" aria-label="Perfil de Presencia Digital IA">
             <figure class="photo-slot">
               <img src="assets/Gemini_Generated_Image_9qzsbu9qzsbu9qzs.png" alt="Retrato de Juan Carlos Rivero, fundador de Presencia Digital IA" loading="lazy" width="768" height="1344">
             </figure>
-            <p class="founder-role">Fundador de Presencia Digital IA</p>
             <p class="founder-meta">Presencia Digital IA · México</p>
             <div class="profile-block">
               <h4>Enfoque de trabajo</h4>
-              <p>Auditamos tu presencia digital, WhatsApp, Google Maps, redes y seguimiento para detectar dónde pierdes clientes, tiempo o control.</p>
+              <p>Auditamos presencia digital, WhatsApp, Google Maps, redes y seguimiento para detectar oportunidades.</p>
             </div>
             <div class="profile-block">
               <h4>Respaldo técnico discreto</h4>
@@ -1588,14 +1586,6 @@
 
   </main>
 
-  <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-label="Video explicativo">
-    <div class="video-modal-card" role="document">
-      <button class="video-modal-close" type="button" id="closeVideoModal" aria-label="Cerrar video">×</button>
-      <video id="brandVideo" controls playsinline preload="none"></video>
-      <div class="video-placeholder" id="videoPlaceholder" hidden>Video próximamente: Cómo ponemos tu negocio en ON</div>
-    </div>
-  </div>
-
   <footer>
     <div class="footer-inner">
       <div><strong>Presencia Digital IA</strong><br>Presencia, WhatsApp y control para negocios locales en México.</div>
@@ -1631,34 +1621,6 @@
       setActiveNav('inicio');
     }
 
-    const videoModal = document.querySelector('#videoModal');
-    const openVideoModal = document.querySelector('#openVideoModal');
-    const closeVideoModal = document.querySelector('#closeVideoModal');
-    const brandVideo = document.querySelector('#brandVideo');
-
-    const openModal = (event) => {
-      event.preventDefault();
-      if (!videoModal) return;
-      videoModal.classList.add('is-open');
-      videoModal.setAttribute('aria-hidden', 'false');
-    };
-
-    const closeModal = () => {
-      if (!videoModal) return;
-      videoModal.classList.remove('is-open');
-      videoModal.setAttribute('aria-hidden', 'true');
-      brandVideo?.pause();
-      if (brandVideo) brandVideo.currentTime = 0;
-    };
-
-    openVideoModal?.addEventListener('click', openModal);
-    closeVideoModal?.addEventListener('click', closeModal);
-    videoModal?.addEventListener('click', (event) => {
-      if (event.target === videoModal) closeModal();
-    });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && videoModal?.classList.contains('is-open')) closeModal();
-    });
   </script>
 </body>
 </html>
