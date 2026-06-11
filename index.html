@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -1330,6 +1330,293 @@
       .plan ul { font-size: .9rem; }
       .cta h2 { font-size: clamp(2rem, 10vw, 2.85rem); }
     }
+
+    /* V2 Optimization CSS */
+    .report-mockup {
+      width: 100%;
+      background: rgba(17, 17, 17, 0.72);
+      border: 1px solid rgba(204, 255, 0, 0.22);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      color: #fff;
+      text-align: left;
+    }
+    .report-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 12px;
+    }
+    .report-tag {
+      font-size: 10px;
+      color: #050505;
+      background: var(--lime);
+      padding: 4px 8px;
+      border-radius: 99px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+    .report-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+    .report-body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .report-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .report-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .report-item.danger .report-status { color: #ff3b30; }
+    .report-item.warning .report-status { color: #ffcc00; }
+    .report-item.success .report-status { color: var(--lime); }
+    .report-bar {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .report-fill {
+      height: 100%;
+      border-radius: 99px;
+    }
+    .report-item.danger .report-fill { background: #ff3b30; }
+    .report-item.warning .report-fill { background: #ffcc00; }
+    .report-item.success .report-fill { background: var(--lime); }
+    .report-action-plan {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 16px;
+      margin-top: 8px;
+    }
+    .report-action-plan h4 {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: var(--lime);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .report-action-plan ul {
+      margin: 0;
+      padding: 0 0 0 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .report-action-plan li {
+      margin-bottom: 6px;
+    }
+    
+    /* Hallazgos Reales */
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .evidence-card {
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+      padding: 30px;
+      box-shadow: var(--shadow);
+    }
+    .evidence-card:hover {
+      border-color: rgba(204, 255, 0, 0.3);
+    }
+    .evidence-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .evidence-badge {
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 99px;
+      padding: 4px 10px;
+      color: #fff;
+    }
+    .evidence-card.danger .evidence-badge {
+      color: #ff3b30;
+      border-color: rgba(255, 59, 48, 0.3);
+      background: rgba(255, 59, 48, 0.05);
+    }
+    .evidence-card h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+    .evidence-desc {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+      margin: 16px 0;
+    }
+    .evidence-impact {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      font-size: 14px;
+      color: #ffb3b3;
+      font-weight: 700;
+    }
+    .evidence-impact strong {
+      color: #ff5252;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Checklist Section */
+    .checklist-container {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+      gap: 48px;
+      align-items: center;
+    }
+    .checklist-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .checklist-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #fff;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .checklist-item i {
+      color: var(--lime);
+      font-size: 18px;
+      margin-top: 2px;
+    }
+
+    /* Flow Diagram */
+    .flow-diagram {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 32px 24px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+    .flow-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      display: grid;
+      place-items: center;
+      color: var(--lime);
+      font-size: 20px;
+      margin-bottom: 12px;
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+    }
+    .flow-step:last-child .flow-icon {
+      border-color: var(--lime);
+      box-shadow: 0 0 20px rgba(204, 255, 0, 0.25);
+      background: rgba(204, 255, 0, 0.05);
+    }
+    .flow-label {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .flow-arrow {
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 20px;
+    }
+
+    /* Sticky Mobile CTA */
+    .sticky-mobile-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: rgba(5, 5, 5, 0.85);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px 18px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .sticky-mobile-cta .btn {
+      width: 100%;
+      margin: 0;
+      min-height: 48px;
+      font-size: 15px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 980px) {
+      .sticky-mobile-cta {
+        display: flex;
+      }
+      .evidence-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .checklist-container {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .checklist-list {
+        grid-template-columns: 1fr;
+      }
+      .flow-diagram {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .flow-arrow {
+        transform: rotate(90deg);
+        margin: 4px 0;
+      }
+      .hero-visual {
+        display: block !important;
+        min-height: auto;
+        margin-top: 32px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1342,11 +1629,11 @@
       <div class="nav-links">
         <a href="#inicio" data-nav-link>Inicio</a>
         <a href="#diagnostico-on" data-nav-link>Diagnóstico ON</a>
-        <a href="#servicios" data-nav-link>Qué resolvemos</a>
+        <a href="#hallazgos-reales" data-nav-link>Hallazgos reales</a>
         <a href="#proceso" data-nav-link>Cómo funciona</a>
         <a href="#faq" data-nav-link>FAQ</a>
       </div>
-      <a class="nav-cta" href="https://wa.me/525647943262?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico</a>
+      <a class="nav-cta" href="https://wa.me/525562189913?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico</a>
     </div>
   </nav>
 
@@ -1368,31 +1655,48 @@
           </div>
           <div class="hero-note">No hacemos posts. Encendemos negocios.</div>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/525647943262?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico ON <span aria-hidden="true">-></span></a>
+            <a class="btn btn-primary" href="https://wa.me/525562189913?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico ON <span aria-hidden="true">-></span></a>
             <a class="btn btn-secondary" href="#proceso"><i class="fa-regular fa-circle-play" aria-hidden="true"></i> Ver cómo funciona</a>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
-          <div class="hero-metric metric-loss">
-            <small>Oportunidades perdidas</small>
-            <span class="metric-value">-37%</span>
-            <span class="metric-copy">por falta de seguimiento</span>
+          <div class="report-mockup">
+            <div class="report-header">
+              <span class="report-tag">Ejemplo Entregable</span>
+              <span class="report-title">DIAGNÓSTICO ON</span>
+            </div>
+            <div class="report-body">
+              <div class="report-item danger">
+                <div class="report-meta">
+                  <span>Presencia en Fichas (Google Maps)</span>
+                  <span class="report-status">CRÍTICO</span>
+                </div>
+                <div class="report-bar"><div class="report-fill" style="width: 25%"></div></div>
+              </div>
+              <div class="report-item warning">
+                <div class="report-meta">
+                  <span>Contacto Directo (WhatsApp)</span>
+                  <span class="report-status">OPORTUNIDAD</span>
+                </div>
+                <div class="report-bar"><div class="report-fill" style="width: 45%"></div></div>
+              </div>
+              <div class="report-item success">
+                <div class="report-meta">
+                  <span>Competencia Local (Tráfico)</span>
+                  <span class="report-status">ANALIZADO</span>
+                </div>
+                <div class="report-bar"><div class="report-fill" style="width: 90%"></div></div>
+              </div>
+              <div class="report-action-plan">
+                <h4>Plan de Acción ON</h4>
+                <ul>
+                  <li>Recuperar control de reseñas locales.</li>
+                  <li>Reestructurar enlaces rotos en perfiles.</li>
+                  <li>Eliminar fricción de primer contacto.</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="hero-metric metric-reviews">
-            <small>Reseñas nuevas</small>
-            <span class="metric-value">4.9 <span class="metric-stars">★★★★★</span></span>
-          </div>
-          <div class="hero-metric metric-whatsapp">
-            <small>Consultas por WhatsApp</small>
-            <span class="metric-value">+28%</span>
-            <span class="metric-copy">este mes</span>
-          </div>
-          <div class="hero-metric metric-citas">
-            <small>Citas confirmadas</small>
-            <span class="metric-value">+42%</span>
-            <span class="metric-copy">este mes</span>
-          </div>
-          <div class="on-badge">ON</div>
         </div>
       </div>
     </section>
@@ -1428,6 +1732,63 @@
         </div>
       </div>
     </section>
+
+    <section id="hallazgos-reales">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Evidencia</span>
+          <h2>Hallazgos reales detectados</h2>
+          <p>Ejemplos reales de oportunidades encontradas en auditorías previas a negocios locales.</p>
+        </div>
+        <div class="evidence-grid">
+          <div class="evidence-card danger">
+            <div class="evidence-header">
+              <span class="evidence-badge">Google Maps</span>
+            </div>
+            <h3>Dentista</h3>
+            <p class="evidence-desc">Solo 12 reseñas en total y la última fue publicada hace más de 3 años.</p>
+            <div class="evidence-impact">
+              <strong>Impacto crítico</strong>
+              Pacientes nuevos asumen que el consultorio está abandonado y pierden confianza antes de contactar.
+            </div>
+          </div>
+          <div class="evidence-card danger">
+            <div class="evidence-header">
+              <span class="evidence-badge">Canal de Ventas</span>
+            </div>
+            <h3>Barbería</h3>
+            <p class="evidence-desc">Sin sitio web ni sistema de citas. Todo se gestiona por llamadas directas.</p>
+            <div class="evidence-impact">
+              <strong>Impacto crítico</strong>
+              Clientes de nuevas generaciones abandonan el proceso de reserva antes de marcar por teléfono.
+            </div>
+          </div>
+          <div class="evidence-card danger">
+            <div class="evidence-header">
+              <span class="evidence-badge">WhatsApp</span>
+            </div>
+            <h3>Spa</h3>
+            <p class="evidence-desc">El enlace a WhatsApp está roto en Instagram y no hay botón directo en su página.</p>
+            <div class="evidence-impact">
+              <strong>Impacto crítico</strong>
+              Fricción extrema: el cliente debe copiar y guardar el número a mano, perdiendo el 60% de los interesados.
+            </div>
+          </div>
+          <div class="evidence-card danger">
+            <div class="evidence-header">
+              <span class="evidence-badge">Ficha Local</span>
+            </div>
+            <h3>Restaurante</h3>
+            <p class="evidence-desc">Horarios incorrectos en Google Maps y sin menú digital enlazado.</p>
+            <div class="evidence-impact">
+              <strong>Impacto crítico</strong>
+              Clientes molestos por acudir en días cerrados y pérdida de llamadas de reserva espontáneas.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="diagnostico-on-servicio">
       <div class="container">
         <div class="split-section">
@@ -1436,7 +1797,7 @@
             <h2>Diagnóstico ON</h2>
             <p>Primero analizamos tu negocio. Revisamos tu presencia digital, WhatsApp, Google Maps, redes, seguimiento de clientes y organización interna.</p>
             <p>Después te decimos qué mejorar para verte más profesional, perder menos oportunidades y operar con más control.</p>
-            <a class="btn btn-primary" href="https://wa.me/525647943262?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico ON</a>
+            <a class="btn btn-primary" href="https://wa.me/525562189913?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico ON</a>
           </div>
           <div class="card">
             <span class="icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
@@ -1477,33 +1838,145 @@
         </div>
       </div>
     </section>
-    <section id="servicios">
+
+    <section id="que-recibes">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Qué resolvemos</span>
-          <h2>Lo que podemos mejorar</h2>
+          <span class="eyebrow">Detalle del servicio</span>
+          <h2>¿Qué recibes exactamente?</h2>
+          <p>El Diagnóstico ON no es una charla improvisada ni un reporte automático. Recibes un análisis manual y detallado con los siguientes elementos:</p>
         </div>
-        <div class="improvement-list">
-          <div class="improvement-item">
-            <span class="improvement-check" aria-hidden="true">✓</span>
-            <p><span class="improvement-title">Más confianza</span>Tu negocio debe verse tan bien como lo que ofrece.</p>
+        <div class="checklist-container">
+          <div>
+            <div class="checklist-list">
+              <div class="checklist-item">
+                <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Diagnóstico personalizado</strong>
+                  <p style="margin: 4px 0 0 0; color: var(--muted); font-size: 14px; font-weight: 500;">Análisis específico de la presencia y operación de tu negocio local.</p>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Hallazgos detectados</strong>
+                  <p style="margin: 4px 0 0 0; color: var(--muted); font-size: 14px; font-weight: 500;">Problemas de visibilidad, links rotos o fricciones de contacto.</p>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Comparación local</strong>
+                  <p style="margin: 4px 0 0 0; color: var(--muted); font-size: 14px; font-weight: 500;">Evaluación frente a tus 3 competidores geográficos más cercanos.</p>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Oportunidades prioritarias</strong>
+                  <p style="margin: 4px 0 0 0; color: var(--muted); font-size: 14px; font-weight: 500;">Qué cambios tendrán el mayor impacto inmediato en tus ventas.</p>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Recomendaciones concretas</strong>
+                  <p style="margin: 4px 0 0 0; color: var(--muted); font-size: 14px; font-weight: 500;">Instrucciones claras y directas sin jerga técnica.</p>
+                </div>
+              </div>
+              <div class="checklist-item">
+                <i class="fa-solid fa-square-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Plan de acción priorizado</strong>
+                  <p style="margin: 4px 0 0 0; color: var(--muted); font-size: 14px; font-weight: 500;">Una hoja de ruta paso a paso para ejecutar las mejoras.</p>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/525562189913?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer" style="margin-top: 32px;">Solicitar Diagnóstico ON</a>
           </div>
-          <div class="improvement-item">
-            <span class="improvement-check" aria-hidden="true">✓</span>
-            <p><span class="improvement-title">Más clientes</span>Haz más fácil que te encuentren y te contacten.</p>
-          </div>
-          <div class="improvement-item">
-            <span class="improvement-check" aria-hidden="true">✓</span>
-            <p><span class="improvement-title">Más control</span>Organiza clientes, citas y seguimientos.</p>
-          </div>
-          <div class="improvement-item">
-            <span class="improvement-check" aria-hidden="true">✓</span>
-            <p><span class="improvement-title">Menos caos</span>Reduce tareas repetitivas y pérdidas de información.</p>
+          <div>
+            <div class="report-mockup">
+              <div class="report-header">
+                <span class="report-tag">Auditoría PDF</span>
+                <span class="report-title">ENTREGABLE FINAL</span>
+              </div>
+              <div class="report-body">
+                <div class="report-item danger">
+                  <div class="report-meta">
+                    <span>Salud Google Maps</span>
+                    <span class="report-status">DEFICIENTE</span>
+                  </div>
+                  <div class="report-bar"><div class="report-fill" style="width: 15%"></div></div>
+                </div>
+                <div class="report-item warning">
+                  <div class="report-meta">
+                    <span>Embudo WhatsApp</span>
+                    <span class="report-status">CRÍTICO</span>
+                  </div>
+                  <div class="report-bar"><div class="report-fill" style="width: 40%"></div></div>
+                </div>
+                <div class="report-item success">
+                  <div class="report-meta">
+                    <span>Relevancia vs Competencia</span>
+                    <span class="report-status">REVISADO</span>
+                  </div>
+                  <div class="report-bar"><div class="report-fill" style="width: 80%"></div></div>
+                </div>
+                <div class="report-action-plan">
+                  <h4>Prioridad de Ejecución</h4>
+                  <ul style="padding-left: 14px;">
+                    <li>1. Corregir enlace de reserva de WhatsApp (Fricción alta).</li>
+                    <li>2. Configurar perfil de Google Maps y solicitar reseñas activamente.</li>
+                    <li>3. Estandarizar diseño de publicaciones de marca.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <section id="como-encontramos">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Metodología</span>
+          <h2>Cómo encontramos las oportunidades</h2>
+          <p>Realizamos un recorrido completo simulando la experiencia de tu cliente potencial antes de comprar.</p>
+        </div>
+        <div class="flow-diagram">
+          <div class="flow-step">
+            <div class="flow-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></div>
+            <span class="flow-label">Tu Negocio</span>
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i></div>
+            <span class="flow-label">Google Maps / Fichas</span>
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></div>
+            <span class="flow-label">WhatsApp Business</span>
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon"><i class="fa-solid fa-users-viewfinder" aria-hidden="true"></i></div>
+            <span class="flow-label">Competencia Local</span>
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon"><i class="fa-solid fa-funnel-dollar" aria-hidden="true"></i></div>
+            <span class="flow-label">Conversión Final</span>
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></div>
+          <div class="flow-step">
+            <div class="flow-icon"><i class="fa-solid fa-power-off" aria-hidden="true"></i></div>
+            <span class="flow-label">Diagnóstico ON</span>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="quien-esta-detras">
       <div class="container">
         <div class="split-section">
@@ -1514,9 +1987,32 @@
             <p>Ayudo a negocios locales a detectar dónde pierden clientes, confianza y control para convertirlo en acciones claras.</p>
           </div>
           <aside class="founder-card" aria-label="Perfil de Presencia Digital IA">
-            <figure class="photo-slot">
-              <img src="assets/Gemini_Generated_Image_9qzsbu9qzsbu9qzs.png" alt="Retrato de Juan Carlos Rivero, fundador de Presencia Digital IA" loading="lazy" width="768" height="1344">
-            </figure>
+            <div class="report-mockup" style="margin-bottom: 18px;">
+              <div class="report-header">
+                <span class="report-tag">Entregable</span>
+                <span class="report-title">PLAN DE ACCIÓN ON</span>
+              </div>
+              <div class="report-body">
+                <div class="report-item danger">
+                  <div class="report-meta">
+                    <span>Google Maps (Reseñas)</span>
+                    <span class="report-status">CRÍTICO</span>
+                  </div>
+                  <div class="report-bar"><div class="report-fill" style="width: 20%"></div></div>
+                </div>
+                <div class="report-item success">
+                  <div class="report-meta">
+                    <span>Fácil Contacto</span>
+                    <span class="report-status">ÓPTIMO</span>
+                  </div>
+                  <div class="report-bar"><div class="report-fill" style="width: 95%"></div></div>
+                </div>
+                <div class="report-action-plan" style="padding: 10px;">
+                  <span style="font-size: 11px; font-weight: 800; color: var(--lime);">HALLAZGO CLAVE</span>
+                  <p style="margin: 4px 0 0 0; font-size: 12px; line-height: 1.4; color: var(--muted);">El 37% de los prospectos abandonan antes de contactar debido a la falta de enlaces claros en redes sociales.</p>
+                </div>
+              </div>
+            </div>
             <p class="founder-meta">Presencia Digital IA · México</p>
             <div class="profile-block">
               <h4>Enfoque de trabajo</h4>
@@ -1576,10 +2072,10 @@
 
     <section class="cta">
       <div class="container">
-        <h2>Descubre qué está frenando tu negocio.</h2>
-        <p>Solicita un Diagnóstico ON y recibe recomendaciones claras para mejorar tu presencia, organización y seguimiento.</p>
+        <h2>Descubre qué está frenando tus resultados.</h2>
+        <p>Antes de invertir más dinero en publicidad, contenido o herramientas, entiende dónde están las oportunidades reales.</p>
         <div class="hero-actions" style="justify-content:center">
-          <a class="btn btn-primary" href="https://wa.me/525647943262?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico ON</a>
+          <a class="btn btn-primary" href="https://wa.me/525562189913?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">Solicitar Diagnóstico ON</a>
         </div>
       </div>
     </section>
@@ -1589,9 +2085,15 @@
   <footer>
     <div class="footer-inner">
       <div><strong>Presencia Digital IA</strong><br>Presencia, WhatsApp y control para negocios locales en México.</div>
-      <a href="https://wa.me/525647943262?text=Hola,%20tengo%20una%20pregunta%20sobre%20Presencia%20Digital%20IA" target="_blank" rel="noreferrer">WhatsApp: +52 56 4794 3262</a>
+      <a href="https://wa.me/525562189913?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">WhatsApp: +52 55 6218 9913</a>
     </div>
   </footer>
+
+  <div class="sticky-mobile-cta" id="mobileStickyCta">
+    <a class="btn btn-primary" href="https://wa.me/525562189913?text=Hola,%20quiero%20solicitar%20un%20Diagn%C3%B3stico%20ON" target="_blank" rel="noreferrer">
+      Solicitar Diagnóstico ON
+    </a>
+  </div>
 
   <script>
 
@@ -1619,6 +2121,20 @@
 
       navSections.forEach((section) => navObserver.observe(section));
       setActiveNav('inicio');
+    }
+
+    // Sticky Mobile CTA Visibility logic
+    const stickyCta = document.getElementById('mobileStickyCta');
+    const heroSection = document.getElementById('inicio');
+    if (stickyCta && heroSection) {
+      window.addEventListener('scroll', () => {
+        const heroHeight = heroSection.offsetHeight;
+        if (window.scrollY > heroHeight - 100) {
+          stickyCta.classList.add('is-visible');
+        } else {
+          stickyCta.classList.remove('is-visible');
+        }
+      });
     }
 
   </script>
